@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 @import "tailwindcss";
+
 
 :root {
   --background: #ffffff;
@@ -22,5 +26,20 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading {
+  font-family: "Libre Baskerville", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.subheading {
+  font-family: "Libre Baskerville", serif;
+  font-style: italic;
+}
+
+.para {
+  font-family: "Quicksand", sans-serif;
 }

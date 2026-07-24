@@ -13,18 +13,18 @@ const Hero = () => {
   const [showContactMenu, setShowContactMenu] = useState(false);
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center p-3 md:p-6 font-sans overflow-hidden bg-black/90">
+    <div className="relative min-h-screen w-full flex items-center justify-center p-3 md:p-6 font-sans overflow-hidden">
       {/* Background Image Container with Soft Overlay */}
       <div className="absolute inset-0 m-2 md:m-5 overflow-hidden rounded-[2rem] md:rounded-[3rem] shadow-2xl">
         <Image
-          src="/bg2.png"
+          src="/bg.png"
           alt="Aarunya Cola Beach"
           fill
           priority
-          className="object-cover object-center scale-105 transition-transform duration-1000 ease-out"
+          className="object-cover object-center scale-100 transition-transform duration-1000 ease-out"
         />
         {/* Deep luxury ambient gradient overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70 rounded-[2rem] md:rounded-[3rem]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/0 to-black/50 rounded-[2rem] md:rounded-[3rem]" />
       </div>
 
       {/* Hero Content Container */}
@@ -37,7 +37,6 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white/90 text-xs md:text-sm tracking-widest uppercase shadow-lg"
         >
-          <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
           <span>Cola Beach • South Goa</span>
         </motion.div>
 
@@ -49,13 +48,13 @@ const Hero = () => {
           className="space-y-4 max-w-3xl"
         >
           {/* Main Heading: Aarunya */}
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-serif font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white via-white/95 to-white/80 tracking-tight drop-shadow-xl">
+          <h1 className="heading text-5xl sm:text-7xl md:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white via-white/95 to-white/80 tracking-tight drop-shadow-xl">
             Aarunya
           </h1>
 
           {/* Subheading */}
-          <p className="text-base sm:text-lg md:text-xl text-white/90 font-light leading-relaxed tracking-wide drop-shadow-md">
-            A secluded, eco-tented escape on Cola Beach, South Goa — reborn for a new sunrise.
+          <p className="subheading text-xl text-white/90 font-light leading-relaxed tracking-wide drop-shadow-md">
+            A secluded, eco-tented escape on Cola Beach, Valsad, Gujarat — reborn for a new sunrise.
           </p>
         </motion.div>
 
@@ -67,7 +66,7 @@ const Hero = () => {
           className="w-full max-w-4xl mt-6"
         >
           {/* iOS Ultra Glass Container */}
-          <div className="relative backdrop-blur-2xl bg-white/15 dark:bg-black/25 border border-white/30 rounded-3xl md:rounded-full p-2.5 md:p-3 shadow-[0_10px_40px_rgba(0,0,0,0.35)] flex flex-col md:flex-row items-center justify-between gap-2 transition-all duration-300 hover:border-white/40 hover:bg-white/20">
+          <div className="relative backdrop-blur-3xl bg-black/20 border border-white/30 rounded-2xl md:rounded-2xl p-2.5 md:p-1.5 shadow-[0_10px_40px_rgba(0,0,0,0.35)] flex flex-col md:flex-row items-center justify-between gap-2 transition-all duration-300 hover:border-white/40 hover:bg-white/20">
             
             {/* Check In Field */}
             <div className="flex-1 w-full flex items-center gap-3 px-4 py-3 md:py-2 rounded-2xl md:rounded-full hover:bg-white/10 transition-all cursor-pointer group border border-transparent hover:border-white/20">
