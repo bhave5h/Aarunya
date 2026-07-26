@@ -36,13 +36,17 @@ body {
   font-family: var(--font-libre), serif;
   font-weight: 300;
   font-style: normal;
+  
 }
 
 .subheading {
   font-family: var(--font-libre), serif;
   font-style: italic;
+   @apply text-2xl text-black/80 text-shadow-sm tracking-wide;
 }
 
 .para {
   font-family: var(--font-quicksand), sans-serif;
+  @apply text-black/70 text-xl font-semibold mx-auto leading-relaxed
 }
+

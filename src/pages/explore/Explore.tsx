@@ -359,6 +359,7 @@ export const Explore = () => {
                 alt="Aarunya Eco Tented Resort Aerial Landscape"
                 fill
                 priority
+                sizes="(max-width: 1024px) 100vw, 740px"
                 className="object-cover object-center"
               />
               

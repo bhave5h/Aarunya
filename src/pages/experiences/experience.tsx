@@ -1,89 +1,166 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 const frames = [
   {
     id: "f1",
-    src: "/frame/f1.png",
+    src: "/frame/(1).png",
     alt: "Bonfire Experience",
-    width: 401,
-    height: 476,
+    width: 700,
+    height: 868,
     rotate: -6,
-    initialX: -15,
-    initialY: 10,
     zIndex: 10,
   },
   {
     id: "f2",
-    src: "/frame/f2.png",
+    src: "/frame/(2).png",
     alt: "A Beautiful Escapee",
-    width: 601,
-    height: 487,
-    rotate: -2,
-    initialX: 0,
-    initialY: 0,
+    width: 700,
+    height: 868,
+    rotate: -6,
     zIndex: 20,
   },
   {
     id: "f3",
-    src: "/frame/f3.png",
+    src: "/frame/(3).png",
     alt: "Sunset Experience",
-    width: 393,
-    height: 465,
-    rotate: 3,
-    initialX: 10,
-    initialY: 5,
-    zIndex: 30,
+    width: 700,
+    height: 868,
+    rotate: 0,
+    zIndex: 25,
   },
   {
     id: "f4",
-    src: "/frame/f4.png",
+    src: "/frame/(4).png",
     alt: "Kayaking Experience",
-    width: 366,
-    height: 392,
-    rotate: 7,
-    initialX: 20,
-    initialY: 15,
-    zIndex: 25,
+    width: 700,
+    height: 868,
+    rotate: 3,
+    zIndex: 30,
+  },
+  {
+    id: "f5",
+    src: "/frame/(5).png",
+    alt: "Kayaking Experience",
+    width: 700,
+    height: 868,
+    rotate: 6,
+    zIndex: 20,
+  },
+  
+  {
+    id: "f6",
+    src: "/frame/(6).png",
+    alt: "Kayaking Experience",
+    width: 700,
+    height: 868,
+    rotate: 8,
+    zIndex: 10,
   },
 ];
 
 export const Experience = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isMobile = useMediaQuery("(max-width: 640px)");
+  const isTablet = useMediaQuery("(max-width: 1024px)");
+
+  // Responsive target X coordinates when fanned out
+  const getTargetX = (id: string) => {
+    if (isMobile) {
+      if (id === "f1") return -75;
+      if (id === "f2") return -25;
+      if (id === "f3") return 25;
+      if (id === "f4") return 75;
+    }
+    if (isTablet) {
+      if (id === "f1") return -180;
+      if (id === "f2") return -60;
+      if (id === "f3") return 60;
+      if (id === "f4") return 180;
+    }
+    // Desktop layout
+    if (id === "f1") return -400;
+    if (id === "f2") return -200;
+    if (id === "f3") return -100;
+    if (id === "f4") return 100;
+    if (id === "f5") return 260;
+    if (id === "f6") return 400;
+    return 0;
+  };
+
+  // Responsive target Y coordinates when fanned out
+  const getTargetY = (id: string) => {
+    if (isMobile) {
+      if (id === "f1") return -10;
+      if (id === "f2") return 15;
+      if (id === "f3") return -15;
+      if (id === "f4") return 10;
+    }
+    if (id === "f1") return -0;
+    if (id === "f2") return 5;
+    if (id === "f3") return -5;
+    if (id === "f4") return 0;
+    if (id === "f5") return 5;
+    if (id === "f6") return 0;
+    return 0;
+  };
+
   return (
-    <section className="relative w-full py-16 md:py-24 px-4 overflow-hidden bg-[#ffffff]">
+    <section
+      ref={sectionRef}
+      className="relative w-full py-16 md:py-24 px-4 overflow-hidden bg-[#ffffff] select-none"
+    >
       {/* Header Section */}
-      <div className="max-w-3xl mx-auto text-center space-y-3 mb-12 md:mb-16">
-        <h2 className="heading text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight">
+      <div className="max-w-3xl mx-auto text-center space-y-3 mb-12 md:mb-16 pointer-events-none">
+        <h2 className="heading text-6xl font-bold text-black/95 tracking-tight text-shadow-lg">
           Experience
         </h2>
-        <p className="subheading text-xl sm:text-2xl text-gray-800 tracking-wide font-normal italic">
-          Live Slower, Feel Everything
+        <p className="subheading">
+          Live Slower, Feel Everything 
         </p>
-        <p className="para text-gray-600 text-sm sm:text-base md:text-lg max-w-xl mx-auto leading-relaxed pt-1">
-          Bonfire nights, Goan folk dances, sunrise kayaking and dolphin<br className="hidden sm:inline" />
+        <p className="para">
+          Bonfire nights, folk dances, sunrise kayaking and dolphin<br className="hidden sm:inline" />
           {" "}spotting days shaped by the tide, not the clock.
         </p>
       </div>
 
-      {/* Draggable Frames Grid / Container */}
-      <div className="max-w-6xl mx-auto relative min-h-[420px] sm:min-h-[480px] md:min-h-[520px] flex items-center justify-center">
-        <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-2 sm:gap-4 md:gap-0 w-full relative">
-          {frames.map((frame) => (
+      {/* Draggable Frames Container */}
+      <div className="max-w-5xl mx-auto relative min-h-[300px] flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center">
+          {frames.map((frame, index) => (
             <motion.div
               key={frame.id}
               drag
-              dragConstraints={{ left: -150, right: 150, top: -100, bottom: 100 }}
-              dragElastic={0.2}
-              whileDrag={{ scale: 1.08, zIndex: 60, cursor: "grabbing" }}
+              dragConstraints={sectionRef}
+              dragElastic={0.15}
+              whileDrag={{ scale: 1.08, zIndex: 100, cursor: "grabbing" }}
               whileHover={{ scale: 1.04, zIndex: 50 }}
-              initial={{ opacity: 0, y: 30, rotate: frame.rotate }}
-              animate={{ opacity: 1, y: frame.initialY, x: frame.initialX, rotate: frame.rotate }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              initial={{
+                opacity: 0,
+                x: 0,
+                y: 0,
+                rotate: 0,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: getTargetX(frame.id),
+                y: getTargetY(frame.id),
+                rotate: frame.rotate,
+              }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                type: "spring",
+                stiffness: 60,
+                damping: 15,
+                mass: 1,
+                delay: index * 0.12,
+              }}
               style={{ zIndex: frame.zIndex }}
-              className="relative cursor-grab active:cursor-grabbing select-none touch-none shrink-0"
+              className="absolute cursor-grab active:cursor-grabbing select-none touch-none shrink-0"
             >
               <Image
                 src={frame.src}
@@ -92,7 +169,7 @@ export const Experience = () => {
                 height={frame.height}
                 priority
                 draggable={false}
-                className="w-[220px] sm:w-[270px] md:w-[310px] h-auto object-contain pointer-events-none drop-shadow-xl hover:drop-shadow-2xl transition-shadow"
+                className="w-[200px] h-auto object-contain pointer-events-none drop-shadow-xl hover:drop-shadow-3xl transition-all duration-100 ease-in"
               />
             </motion.div>
           ))}

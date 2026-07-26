@@ -7,7 +7,6 @@ import FAQ from "@/src/pages/faq/FAQ";
 import Contact from "@/src/pages/contact/Contact";
 import { ProjectShowcase } from "@/components/ui/project-showcase";
 import { SmoothCursor } from "@/components/ui/cursor";
-import HeroFinancial from "../pages/hero/hero-financial";
 import Footer from "@/components/ui/footer";
 import Navbar from "@/components/ui/navbar";
 
@@ -19,7 +18,6 @@ export default function Home() {
       {/* Main content sitting on top of the footer with higher z-index and background */}
       <div className="relative z-10 bg-white shadow-2xl min-h-screen w-full">
         <Navbar />
-        <HeroFinancial />
         <Hero />
         <Experience />
         <Explore />

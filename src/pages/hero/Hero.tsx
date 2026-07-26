@@ -1,133 +1,133 @@
 "use client";
-
-import React, { useState } from "react";
-import Image from "next/image";
+import React from "react";
+import { TimelineAnimation } from "@/components/ui/timeline-animation";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Calendar,
   Users,
   ArrowRight,
   Phone,
-  Sparkles,
-  ChevronDown,
   MessageSquare,
+  ChevronDown,
 } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
-const Hero = () => {
+export const Hero = () => {
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [guests, setGuests] = useState("2 Guests");
   const [showGuestPicker, setShowGuestPicker] = useState(false);
   const [showContactMenu, setShowContactMenu] = useState(false);
+  const timelineRef = React.useRef<HTMLDivElement>(null);
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center p-3 md:p-6 font-sans overflow-hidden">
-      {/* Background Image Container with Soft Overlay */}
-      <div className="absolute inset-0 m-2 md:m-5 overflow-hidden rounded-[2rem] md:rounded-[3rem] shadow-2xl">
-        <Image
-          src="/bg.png"
-          alt="Aarunya Cola Beach"
-          fill
-          priority
-          className="object-cover object-center scale-100 transition-transform duration-1000 ease-out"
-        />
-        {/* Deep luxury ambient gradient overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/0 to-black/50 rounded-[2rem] md:rounded-[3rem]" />
-      </div>
+    <section
+      ref={timelineRef}
+      className="min-h-screen text-black overflow-hidden flex flex-col items-center w-full"
+    >
+      <div className="absolute inset-0 z-0 bg-white/30" />
 
-      {/* Hero Content Container */}
-      <div className="relative z-10 max-w-5xl w-full mx-auto text-center px-4 flex flex-col items-center justify-center space-y-6 md:space-y-8 py-16">
-        {/* Subtle Location Pill */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white/90 text-xs md:text-sm tracking-widest uppercase shadow-lg"
+      {/* Hero Content */}
+      <div className=" z-10 text-center pt-25 pb-10 px-4 flex flex-col gap-2">
+        <TimelineAnimation
+          animationNum={1}
+          timelineRef={timelineRef}
+          className="bg-white/30 backdrop-blur-md w-fit mx-auto px-3 py-1.5 rounded-full inline-flex items-center gap-2.5 shadow-md border border-white/60"
         >
-          <span>Cola Beach • South Goa</span>
-        </motion.div>
+          <span className="text-xs md:text-sm font-semibold tracking-tight text-slate-800">
+            Valsad, Gujrat
+          </span>
+        </TimelineAnimation>
 
-        {/* Heading & Subheading */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-          className="space-y-4 max-w-3xl"
+        <TimelineAnimation
+          as="h1"
+          animationNum={2}
+          timelineRef={timelineRef}
+          className="heading text-6xl font-bold tracking-tight text-neutral-900 max-w-6xl"
         >
-          {/* Main Heading: Aarunya */}
-          <h1 className="heading text-5xl sm:text-7xl md:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white via-white/95 to-white/80 tracking-tight drop-shadow-xl">
-            Aarunya
-          </h1>
+          Aarunya
+        </TimelineAnimation>
 
-          {/* Subheading */}
-          <p className="subheading text-xl text-white/90 font-light leading-relaxed tracking-wide drop-shadow-md">
-            A secluded, eco-tented escape on Cola Beach, Valsad, Gujarat —
-            reborn for a new sunrise.
-          </p>
-        </motion.div>
+        <TimelineAnimation
+          as="p"
+          animationNum={3}
+          timelineRef={timelineRef}
+          className="subheading text-2xl text-neutral-500 max-w-3xl mx-auto px-1 font-medium"
+        >
+          Where Dawn Meets the Sea
+        </TimelineAnimation>
 
-        {/* iOS Glass Type Search & Booking Bar */}
+        <TimelineAnimation
+          as="p"
+          animationNum={4}
+          timelineRef={timelineRef}
+          className="para "
+        >
+          A secluded, eco-tented escape on Private Beach, Gujarat.
+        </TimelineAnimation>
+
         <motion.div
           initial={{ opacity: 0, y: 35, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="w-full max-w-4xl mt-6"
         >
-          {/* iOS Ultra Glass Container */}
-          <div className="relative backdrop-blur-3xl bg-black/20 border border-white/30 rounded-2xl md:rounded-2xl p-2.5 md:p-1.5 shadow-[0_10px_40px_rgba(0,0,0,0.35)] flex flex-col md:flex-row items-center justify-between gap-2 transition-all duration-300 hover:border-white/40 hover:bg-white/20">
+          {/* Recreated Search & Booking Bar to match Navbar Aesthetics */}
+          <div className="relative backdrop-blur-md bg-white/30 border border-white/60 rounded-4xl p-2.5 md:p-1.5 shadow-md flex flex-col md:flex-row items-center justify-between gap-2 transition-all duration-300 hover:bg-white/40">
             {/* Check In Field */}
-            <div className="flex-1 w-full flex items-center gap-3 px-4 py-3 md:py-2 rounded-2xl md:rounded-full hover:bg-white/10 transition-all cursor-pointer group border border-transparent hover:border-white/20">
-              <Calendar className="w-5 h-5 text-amber-200 group-hover:scale-110 transition-transform" />
+            <div className="flex-1 w-full flex items-center gap-3 px-4 py-3 md:py-2 rounded-3xl md:rounded-full hover:bg-white/40 transition-all cursor-pointer group border border-transparent hover:border-white/50 hover:shadow-xs">
+              <Calendar className="w-5 h-5 text-neutral-600 group-hover:scale-110 transition-transform" />
               <div className="text-left flex-1">
-                <span className="block text-[10px] uppercase tracking-widest text-white/70 font-semibold">
+                <span className="block text-[10px] uppercase tracking-widest text-neutral-500 font-bold">
                   Check In
                 </span>
                 <input
                   type="date"
                   value={checkIn}
                   onChange={(e) => setCheckIn(e.target.value)}
-                  className="bg-transparent text-white font-medium text-sm focus:outline-none w-full cursor-pointer opacity-90 hover:opacity-100 scheme-dark"
+                  className="bg-transparent text-slate-800 font-semibold text-sm focus:outline-none w-full cursor-pointer opacity-90 hover:opacity-100"
                 />
               </div>
             </div>
 
-            <div className="hidden md:block w-px h-8 bg-white/25" />
+            <div className="hidden md:block w-px h-8 bg-neutral-300/40" />
 
             {/* Check Out Field */}
-            <div className="flex-1 w-full flex items-center gap-3 px-4 py-3 md:py-2 rounded-2xl md:rounded-full hover:bg-white/10 transition-all cursor-pointer group border border-transparent hover:border-white/20">
-              <Calendar className="w-5 h-5 text-amber-200 group-hover:scale-110 transition-transform" />
+            <div className="flex-1 w-full flex items-center gap-3 px-4 py-3 md:py-2 rounded-3xl md:rounded-full hover:bg-white/40 transition-all cursor-pointer group border border-transparent hover:border-white/50 hover:shadow-xs">
+              <Calendar className="w-5 h-5 text-neutral-600 group-hover:scale-110 transition-transform" />
               <div className="text-left flex-1">
-                <span className="block text-[10px] uppercase tracking-widest text-white/70 font-semibold">
+                <span className="block text-[10px] uppercase tracking-widest text-neutral-500 font-bold">
                   Check Out
                 </span>
                 <input
                   type="date"
                   value={checkOut}
                   onChange={(e) => setCheckOut(e.target.value)}
-                  className="bg-transparent text-white font-medium text-sm focus:outline-none w-full cursor-pointer opacity-90 hover:opacity-100 scheme-dark"
+                  className="bg-transparent text-slate-800 font-semibold text-sm focus:outline-none w-full cursor-pointer opacity-90 hover:opacity-100"
                 />
               </div>
             </div>
 
-            <div className="hidden md:block w-px h-8 bg-white/25" />
+            <div className="hidden md:block w-px h-8 bg-neutral-300/40" />
 
             {/* No of People (Guests Field) */}
             <div className="relative flex-1 w-full">
               <div
                 onClick={() => setShowGuestPicker(!showGuestPicker)}
-                className="flex items-center gap-3 px-4 py-3 md:py-2 rounded-2xl md:rounded-full hover:bg-white/10 transition-all cursor-pointer group border border-transparent hover:border-white/20"
+                className="flex items-center gap-3 px-4 py-3 md:py-2 rounded-3xl md:rounded-full hover:bg-white/40 transition-all cursor-pointer group border border-transparent hover:border-white/50 hover:shadow-xs"
               >
-                <Users className="w-5 h-5 text-amber-200 group-hover:scale-110 transition-transform" />
+                <Users className="w-5 h-5 text-neutral-600 group-hover:scale-110 transition-transform" />
                 <div className="text-left flex-1">
-                  <span className="block text-[10px] uppercase tracking-widest text-white/70 font-semibold">
+                  <span className="block text-[10px] uppercase tracking-widest text-neutral-500 font-bold">
                     No. of People
                   </span>
-                  <span className="text-white text-sm font-medium block truncate">
+                  <span className="text-slate-800 text-sm font-semibold block truncate">
                     {guests}
                   </span>
                 </div>
                 <ChevronDown
-                  className={`w-4 h-4 text-white/70 transition-transform duration-300 ${showGuestPicker ? "rotate-180" : ""}`}
+                  className={`w-4 h-4 text-neutral-500 transition-transform duration-300 ${showGuestPicker ? "rotate-180" : ""}`}
                 />
               </div>
 
@@ -138,7 +138,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute left-0 right-0 top-full mt-2 p-2 bg-black/70 backdrop-blur-2xl border border-white/25 rounded-2xl z-50 text-left shadow-2xl space-y-1"
+                    className="absolute left-0 right-0 top-full mt-2 p-2 bg-white/90 backdrop-blur-2xl border border-neutral-200/80 rounded-2xl z-50 text-left shadow-xl space-y-1"
                   >
                     {[
                       "1 Person",
@@ -154,8 +154,8 @@ const Hero = () => {
                         }}
                         className={`w-full text-left px-3 py-2 rounded-xl text-xs sm:text-sm transition-colors ${
                           guests === option
-                            ? "bg-white/25 text-white font-semibold"
-                            : "text-white/80 hover:bg-white/15 hover:text-white"
+                            ? "bg-neutral-100 text-neutral-900 font-bold"
+                            : "text-slate-700 hover:bg-neutral-100/80 hover:text-slate-900"
                         }`}
                       >
                         {option}
@@ -166,28 +166,27 @@ const Hero = () => {
               </AnimatePresence>
             </div>
 
-            {/* CTA "Go" Button */}
+            {/* CTA "Go" Button (matching Navbar primary button styles) */}
             <motion.button
               whileHover={{
-                scale: 1.05,
-                boxShadow: "0 0 25px rgba(255, 255, 255, 0.35)",
+                scale: 1.03,
               }}
               whileTap={{ scale: 0.97 }}
-              className="w-full md:w-auto px-7 py-3 rounded-full bg-white/25 hover:bg-white/35 active:bg-white/40 text-white font-semibold text-sm shadow-xl backdrop-blur-md border border-white/40 flex items-center justify-center gap-2 group cursor-pointer transition-all duration-300"
+              className="w-full md:w-auto px-7 py-3 flex gap-1 items-center justify-center rounded-4xl bg-neutral-900 text-white font-bold text-sm hover:bg-black transition shadow-[inset_2px_2px_5px_0px_rgba(0,0,0,0.5),inset_-2px_-2px_6px_1px_rgba(80,78,78,0.5)] cursor-pointer group"
             >
               <span>Go</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-white" />
             </motion.button>
 
-            <div className="hidden md:block w-px h-8 bg-white/25" />
+            <div className="hidden md:block w-px h-8 bg-neutral-300/40" />
 
             {/* Contact at End */}
             <div className="relative w-full md:w-auto">
               <button
                 onClick={() => setShowContactMenu(!showContactMenu)}
-                className="w-full md:w-auto px-5 py-3 md:py-2.5 rounded-2xl md:rounded-full bg-white/10 hover:bg-white/20 text-white/90 hover:text-white backdrop-blur-md border border-white/25 flex items-center justify-center gap-2 text-sm font-medium transition-all group cursor-pointer"
+                className="w-full md:w-auto px-5 py-3 md:py-2.5 rounded-3xl md:rounded-full bg-white/20 hover:bg-white/40 text-slate-800 hover:text-slate-900 backdrop-blur-md border border-white/50 flex items-center justify-center gap-2 text-sm font-semibold transition-all group cursor-pointer"
               >
-                <Phone className="w-4 h-4 text-amber-200 group-hover:scale-110 transition-transform" />
+                <Phone className="w-4 h-4 text-neutral-600 group-hover:scale-110 transition-transform" />
                 <span>Contact</span>
               </button>
 
@@ -198,16 +197,16 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute right-0 top-full mt-2 w-60 p-3 bg-black/70 backdrop-blur-2xl border border-white/25 rounded-2xl z-50 text-left shadow-2xl space-y-2"
+                    className="absolute right-0 top-full mt-2 w-60 p-3 bg-white/90 backdrop-blur-2xl border border-neutral-200/80 rounded-2xl z-50 text-left shadow-xl space-y-2"
                   >
                     <a
                       href="tel:+919876543210"
-                      className="flex items-center gap-3 p-2.5 rounded-xl text-xs text-white/90 hover:bg-white/15 transition-colors"
+                      className="flex items-center gap-3 p-2.5 rounded-xl text-xs text-slate-800 hover:bg-neutral-100/80 transition-colors"
                     >
-                      <Phone className="w-4 h-4 text-amber-300" />
+                      <Phone className="w-4 h-4 text-amber-600" />
                       <div>
-                        <div className="font-semibold text-white">Call Us</div>
-                        <div className="text-white/70 text-[11px]">
+                        <div className="font-bold text-slate-900">Call Us</div>
+                        <div className="text-slate-500 text-[11px]">
                           +91 98765 43210
                         </div>
                       </div>
@@ -216,12 +215,12 @@ const Hero = () => {
                       href="https://wa.me/919876543210"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 p-2.5 rounded-xl text-xs text-white/90 hover:bg-white/15 transition-colors"
+                      className="flex items-center gap-3 p-2.5 rounded-xl text-xs text-slate-800 hover:bg-neutral-100/80 transition-colors"
                     >
-                      <MessageSquare className="w-4 h-4 text-emerald-400" />
+                      <MessageSquare className="w-4 h-4 text-emerald-600" />
                       <div>
-                        <div className="font-semibold text-white">WhatsApp</div>
-                        <div className="text-white/70 text-[11px]">
+                        <div className="font-bold text-slate-900">WhatsApp</div>
+                        <div className="text-slate-500 text-[11px]">
                           Instant Inquiry
                         </div>
                       </div>
@@ -233,7 +232,7 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 
