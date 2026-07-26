@@ -3,7 +3,15 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, Users, ArrowRight, Phone, Sparkles, ChevronDown, MessageSquare } from "lucide-react";
+import {
+  Calendar,
+  Users,
+  ArrowRight,
+  Phone,
+  Sparkles,
+  ChevronDown,
+  MessageSquare,
+} from "lucide-react";
 
 const Hero = () => {
   const [checkIn, setCheckIn] = useState("");
@@ -29,7 +37,6 @@ const Hero = () => {
 
       {/* Hero Content Container */}
       <div className="relative z-10 max-w-5xl w-full mx-auto text-center px-4 flex flex-col items-center justify-center space-y-6 md:space-y-8 py-16">
-        
         {/* Subtle Location Pill */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -54,7 +61,8 @@ const Hero = () => {
 
           {/* Subheading */}
           <p className="subheading text-xl text-white/90 font-light leading-relaxed tracking-wide drop-shadow-md">
-            A secluded, eco-tented escape on Cola Beach, Valsad, Gujarat — reborn for a new sunrise.
+            A secluded, eco-tented escape on Cola Beach, Valsad, Gujarat —
+            reborn for a new sunrise.
           </p>
         </motion.div>
 
@@ -67,12 +75,13 @@ const Hero = () => {
         >
           {/* iOS Ultra Glass Container */}
           <div className="relative backdrop-blur-3xl bg-black/20 border border-white/30 rounded-2xl md:rounded-2xl p-2.5 md:p-1.5 shadow-[0_10px_40px_rgba(0,0,0,0.35)] flex flex-col md:flex-row items-center justify-between gap-2 transition-all duration-300 hover:border-white/40 hover:bg-white/20">
-            
             {/* Check In Field */}
             <div className="flex-1 w-full flex items-center gap-3 px-4 py-3 md:py-2 rounded-2xl md:rounded-full hover:bg-white/10 transition-all cursor-pointer group border border-transparent hover:border-white/20">
               <Calendar className="w-5 h-5 text-amber-200 group-hover:scale-110 transition-transform" />
               <div className="text-left flex-1">
-                <span className="block text-[10px] uppercase tracking-widest text-white/70 font-semibold">Check In</span>
+                <span className="block text-[10px] uppercase tracking-widest text-white/70 font-semibold">
+                  Check In
+                </span>
                 <input
                   type="date"
                   value={checkIn}
@@ -88,7 +97,9 @@ const Hero = () => {
             <div className="flex-1 w-full flex items-center gap-3 px-4 py-3 md:py-2 rounded-2xl md:rounded-full hover:bg-white/10 transition-all cursor-pointer group border border-transparent hover:border-white/20">
               <Calendar className="w-5 h-5 text-amber-200 group-hover:scale-110 transition-transform" />
               <div className="text-left flex-1">
-                <span className="block text-[10px] uppercase tracking-widest text-white/70 font-semibold">Check Out</span>
+                <span className="block text-[10px] uppercase tracking-widest text-white/70 font-semibold">
+                  Check Out
+                </span>
                 <input
                   type="date"
                   value={checkOut}
@@ -108,10 +119,16 @@ const Hero = () => {
               >
                 <Users className="w-5 h-5 text-amber-200 group-hover:scale-110 transition-transform" />
                 <div className="text-left flex-1">
-                  <span className="block text-[10px] uppercase tracking-widest text-white/70 font-semibold">No. of People</span>
-                  <span className="text-white text-sm font-medium block truncate">{guests}</span>
+                  <span className="block text-[10px] uppercase tracking-widest text-white/70 font-semibold">
+                    No. of People
+                  </span>
+                  <span className="text-white text-sm font-medium block truncate">
+                    {guests}
+                  </span>
                 </div>
-                <ChevronDown className={`w-4 h-4 text-white/70 transition-transform duration-300 ${showGuestPicker ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`w-4 h-4 text-white/70 transition-transform duration-300 ${showGuestPicker ? "rotate-180" : ""}`}
+                />
               </div>
 
               {/* Guest Picker Popover */}
@@ -123,7 +140,12 @@ const Hero = () => {
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     className="absolute left-0 right-0 top-full mt-2 p-2 bg-black/70 backdrop-blur-2xl border border-white/25 rounded-2xl z-50 text-left shadow-2xl space-y-1"
                   >
-                    {["1 Person", "2 People", "3 People", "4+ People / Group"].map((option) => (
+                    {[
+                      "1 Person",
+                      "2 People",
+                      "3 People",
+                      "4+ People / Group",
+                    ].map((option) => (
                       <button
                         key={option}
                         onClick={() => {
@@ -146,7 +168,10 @@ const Hero = () => {
 
             {/* CTA "Go" Button */}
             <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(255, 255, 255, 0.35)" }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 25px rgba(255, 255, 255, 0.35)",
+              }}
               whileTap={{ scale: 0.97 }}
               className="w-full md:w-auto px-7 py-3 rounded-full bg-white/25 hover:bg-white/35 active:bg-white/40 text-white font-semibold text-sm shadow-xl backdrop-blur-md border border-white/40 flex items-center justify-center gap-2 group cursor-pointer transition-all duration-300"
             >
@@ -182,7 +207,9 @@ const Hero = () => {
                       <Phone className="w-4 h-4 text-amber-300" />
                       <div>
                         <div className="font-semibold text-white">Call Us</div>
-                        <div className="text-white/70 text-[11px]">+91 98765 43210</div>
+                        <div className="text-white/70 text-[11px]">
+                          +91 98765 43210
+                        </div>
                       </div>
                     </a>
                     <a
@@ -194,17 +221,17 @@ const Hero = () => {
                       <MessageSquare className="w-4 h-4 text-emerald-400" />
                       <div>
                         <div className="font-semibold text-white">WhatsApp</div>
-                        <div className="text-white/70 text-[11px]">Instant Inquiry</div>
+                        <div className="text-white/70 text-[11px]">
+                          Instant Inquiry
+                        </div>
                       </div>
                     </a>
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
-
           </div>
         </motion.div>
-
       </div>
     </div>
   );

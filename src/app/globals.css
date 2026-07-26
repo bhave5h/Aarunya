@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-
 @import "tailwindcss";
-
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+* {
+  cursor: none !important;
 }
 
 @theme inline {
@@ -14,6 +14,10 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Register the new Google Fonts in Tailwind v4 Theme */
+  --font-libre: var(--font-libre);
+  --font-quicksand: var(--font-quicksand);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,17 +33,16 @@ body {
 }
 
 .heading {
-  font-family: "Libre Baskerville", serif;
-  font-optical-sizing: auto;
+  font-family: var(--font-libre), serif;
   font-weight: 300;
   font-style: normal;
 }
 
 .subheading {
-  font-family: "Libre Baskerville", serif;
+  font-family: var(--font-libre), serif;
   font-style: italic;
 }
 
 .para {
-  font-family: "Quicksand", sans-serif;
+  font-family: var(--font-quicksand), sans-serif;
 }

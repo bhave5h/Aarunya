@@ -238,7 +238,7 @@ export function Reviews() {
       </section>
 
       {/* 2. Gallery Marquee Section (Photos of Resorts) */}
-      <section className="w-full relative">
+      <section className="max-w-4xl w-full mx-auto relative">
         <div
           className="flex w-full min-h-screen relative justify-center items-center flex-col bg-black overflow-hidden py-20"
           ref={container}
