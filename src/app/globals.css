@@ -36,6 +36,7 @@ body {
   font-family: var(--font-libre), serif;
   font-weight: 300;
   font-style: normal;
+  @apply text-6xl font-bold text-black/95 tracking-tight text-shadow-lg
   
 }
 

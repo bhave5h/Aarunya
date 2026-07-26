@@ -2,7 +2,7 @@ import Image from "next/image";
 import Hero from "@/src/pages/hero/Hero";
 import Experience from "@/src/pages/experiences/experience";
 import Explore from "@/src/pages/explore/Explore";
-import MasonryGrid from "@/src/pages/reviews/Reviews";
+import MasonryGrid from "@/components/ui/demo";
 import FAQ from "@/src/pages/faq/FAQ";
 import Contact from "@/src/pages/contact/Contact";
 import { ProjectShowcase } from "@/components/ui/project-showcase";
@@ -16,13 +16,13 @@ export default function Home() {
       <SmoothCursor />
       
       {/* Main content sitting on top of the footer with higher z-index and background */}
-      <div className="relative z-10 bg-white shadow-2xl min-h-screen w-full">
+      <div className="relative z-10 bg-white min-h-screen w-full">
         <Navbar />
         <Hero />
         <Experience />
         <Explore />
-        <MasonryGrid />
         <ProjectShowcase />
+        <MasonryGrid />
         <Contact />
         <FAQ />
       </div>

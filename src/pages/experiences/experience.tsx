@@ -51,10 +51,19 @@ const frames = [
     rotate: 6,
     zIndex: 20,
   },
-  
+
   {
     id: "f6",
     src: "/frame/(6).png",
+    alt: "Kayaking Experience",
+    width: 700,
+    height: 868,
+    rotate: 8,
+    zIndex: 10,
+  },
+  {
+    id: "f7",
+    src: "/frame/(7).png",
     alt: "Kayaking Experience",
     width: 700,
     height: 868,
@@ -83,12 +92,13 @@ export const Experience = () => {
       if (id === "f4") return 180;
     }
     // Desktop layout
-    if (id === "f1") return -400;
-    if (id === "f2") return -200;
+    if (id === "f1") return -450;
+    if (id === "f2") return -250;
     if (id === "f3") return -100;
-    if (id === "f4") return 100;
-    if (id === "f5") return 260;
-    if (id === "f6") return 400;
+    if (id === "f4") return 10;
+    if (id === "f5") return 100;
+    if (id === "f6") return 260;
+    if (id === "f7") return 450;
     return 0;
   };
 
@@ -116,15 +126,18 @@ export const Experience = () => {
     >
       {/* Header Section */}
       <div className="max-w-3xl mx-auto text-center space-y-3 mb-12 md:mb-16 pointer-events-none">
-        <h2 className="heading text-6xl font-bold text-black/95 tracking-tight text-shadow-lg">
-          Experience
-        </h2>
-        <p className="subheading">
-          Live Slower, Feel Everything 
-        </p>
+        <div className="bg-white/40 backdrop-blur-md w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-sm border border-neutral-200">
+          <span className="text-xs md:text-sm font-semibold tracking-tight text-slate-800">
+            About
+          </span>
+        </div>
+
+        <h2 className="heading">Experience</h2>
+        <p className="subheading">Live Slower, Feel Everything</p>
         <p className="para">
-          Bonfire nights, folk dances, sunrise kayaking and dolphin<br className="hidden sm:inline" />
-          {" "}spotting days shaped by the tide, not the clock.
+          Bonfire nights, folk dances, sunrise kayaking and dolphin
+          <br className="hidden sm:inline" /> spotting days shaped by the tide,
+          not the clock.
         </p>
       </div>
 
@@ -137,8 +150,8 @@ export const Experience = () => {
               drag
               dragConstraints={sectionRef}
               dragElastic={0.15}
-              whileDrag={{ scale: 1.08, zIndex: 100, cursor: "grabbing" }}
-              whileHover={{ scale: 1.04, zIndex: 50 }}
+              whileDrag={{ scale: 1.20, zIndex: 100, cursor: "grabbing" }}
+              whileHover={{ scale: 1.15, zIndex: 50 }}
               initial={{
                 opacity: 0,
                 x: 0,
@@ -180,4 +193,3 @@ export const Experience = () => {
 };
 
 export default Experience;
-
