@@ -40,7 +40,7 @@ export const Hero = () => {
       className="min-h-screen text-black overflow-hidden flex flex-col items-center w-full relative -mt-[105px] pt-[95px] pb-12"
     >
       {/* Hero BG Image starting from top with 4 padding */}
-      <div className="absolute inset-4 z-0 rounded-3xl md:rounded-4xl overflow-hidden shadow-lg border border-white/60 pointer-events-none">
+      <div className="absolute inset-4 z-0 rounded-3xl md:rounded-4xl overflow-hidden shadow-lg border-white/10 border-1 pointer-events-none">
         <img
           src="/1.png"
           onError={(e) => {
@@ -51,7 +51,7 @@ export const Hero = () => {
           className="w-full h-full object-cover"
         />
         {/* Soft glassmorphic overlay for crisp text legibility */}
-        <div className="absolute inset-0 bg-black/5 " />
+        <div className="absolute inset-0 shadow-inside " />
       </div>
 
       {/* Hero Content */}
@@ -80,7 +80,7 @@ export const Hero = () => {
           as="h1"
           animationNum={2}
           timelineRef={timelineRef}
-          className="heading text-6xl font-bold tracking-tight text-neutral-900 max-w-6xl"
+          className="headingh text-6xl font-bold tracking-tight text-neutral-900 max-w-6xl"
         >
           Aarunya
         </TimelineAnimation>

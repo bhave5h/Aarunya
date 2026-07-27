@@ -39,6 +39,13 @@ body {
   @apply text-4xl sm:text-5xl md:text-6xl font-bold text-neutral-950 tracking-tight text-shadow-lg;
 }
 
+.headingh {
+  font-family: var(--font-libre), serif;
+  font-weight: 700;
+  font-style: normal;
+  @apply text-4xl sm:text-5xl md:text-6xl font-bold text-white/95 tracking-tight text-shadow-lg;
+}
+
 .subheading {
   font-family: var(--font-libre), serif;
   font-style: italic;
