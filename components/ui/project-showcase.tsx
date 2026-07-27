@@ -95,8 +95,24 @@ export function ProjectShowcase() {
   }
 
   return (
-    <section ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full max-w-2xl mx-auto px-6 py-16">
-      <h2 className="text-muted-foreground text-sm font-medium tracking-wide uppercase mb-8">Selected Work</h2>
+    <section ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full max-w-xl mx-auto ">
+
+<div className="mx-auto flex flex-col items-center justify-center space-y-1 pb-10">
+   <h1 className="heading mx-auto">
+          Amenities
+        </h1>
+
+        <h1 className="subheading mx-auto">
+          Tents Fit for a Maharaja
+        </h1>
+
+        <p className="para mx-auto max-w-xl text-center">
+          Handcrafted Rajasthani interiors, sea-facing verandas and <br className="hidden sm:inline" />  private en-suite baths, only fifteen keys along the shore.
+        </p>
+    
+</div>
+      
+      <h2 className="text-sm  text-center text-black  font-medium tracking-wide uppercase mb-8">Selected Work</h2>
 
       <div
         className="pointer-events-none fixed z-50 overflow-hidden rounded-xl shadow-2xl"

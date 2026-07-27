@@ -207,7 +207,7 @@ export const Explore = () => {
   const activeTent = TENTS_DATA.find((t) => t.id === selectedTentId) || TENTS_DATA[0];
 
   return (
-    <section className="relative w-full max-w-7xl mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative w-full max-w-6xl mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Header Section matching Hero.tsx styling */}
       <div className="max-w-4xl mx-auto text-center space-y-3 mb-10 md:mb-14">
         {/* Pill Tag */}
