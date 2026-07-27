@@ -1,8 +1,39 @@
-import React from 'react'
+"use client";
 
-const logo = () => {
+import React from 'react'
+import { motion } from 'framer-motion'
+
+interface LogoProps {
+  width?: number | string;
+  height?: number | string;
+  className?: string;
+}
+
+const logo: React.FC<LogoProps> = ({ width = 50, height = 50, className = "" }) => {
   return (
-    <svg width="50" height="50" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <motion.div
+      initial={{ scale: 0.88, opacity: 0, rotate: -8 }}
+      animate={{ scale: 1, opacity: 1, rotate: 0 }}
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{
+        duration: 0.7,
+        ease: [0.21, 0.47, 0.32, 0.98],
+      }}
+      className={`rounded-full bg-black text-white p-1.5 flex items-center justify-center shadow-sm overflow-hidden cursor-pointer select-none shrink-0 ${className}`}
+      style={{
+        width: typeof width === "number" ? `${width}px` : width,
+        height: typeof height === "number" ? `${height}px` : height,
+      }}
+    >
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 500 500"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-full h-full object-contain"
+      >
 <mask id="mask0_80_4" maskUnits="userSpaceOnUse" x="0" y="0" width="500" height="500">
 <path d="M500 0H0V500H500V0Z" fill="white"/>
 </mask>
@@ -792,6 +823,7 @@ const logo = () => {
 <path fillRule="evenodd" clipRule="evenodd" d="M289.287 487.241L289.25 487.187C289.066 486.959 288.734 486.922 288.502 487.103C287.734 487.704 287.895 488.157 288.794 488.472C289.922 488.882 294.127 488.744 294.734 488.774L308.181 489.852C308.463 489.879 308.711 489.667 308.745 489.385C308.772 489.103 308.56 488.855 308.278 488.821C306.033 488.533 303.815 488.14 301.58 487.882C299.325 487.63 297.063 487.509 294.771 487.472C294.244 487.466 290.167 486.523 289.287 487.241Z" fill="white"/>
 </g>
 </svg>
+</motion.div>
   )
 }
 

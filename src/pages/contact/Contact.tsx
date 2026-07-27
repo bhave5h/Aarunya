@@ -2,7 +2,17 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, CheckCircle, Sparkles, Phone, Mail, MapPin, MessageSquare, User, Calendar } from "lucide-react";
+import {
+  Send,
+  CheckCircle,
+  Sparkles,
+  Phone,
+  Mail,
+  MapPin,
+  MessageSquare,
+  User,
+  Calendar,
+} from "lucide-react";
 import Window from "@/components/ui/Window";
 
 export default function Contact() {
@@ -31,7 +41,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden select-none">
+    <section
+      id="contact"
+      className="relative w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden select-none"
+    >
       {/* Header Section matching Hero/Experience styling */}
       <div className="max-w-4xl mx-auto text-center space-y-3 mb-12 md:mb-16">
         <div className="bg-white/40 backdrop-blur-md w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-sm border border-neutral-200">
@@ -40,10 +53,11 @@ export default function Contact() {
           </span>
         </div>
 
-        <h2 className="heading mx-auto">Get In Touch</h2>
-        <p className="subheading mx-auto">We&apos;re Here to Help You Escape</p>
+        <h2 className="heading mx-auto">Contact</h2>
+        <p className="subheading mx-auto">Find Your Way to Aarunya</p>
         <p className="para mx-auto max-w-2xl">
-          Reserve your eco-tent along the shore, ask about customized itineraries, or connect directly with our coastal hosts.
+          Reserve your eco-tent along the shore, ask about customized
+          itineraries, or connect directly with our coastal hosts.
         </p>
       </div>
 
@@ -62,63 +76,64 @@ export default function Contact() {
           {/* Contact Direct Cards Row */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 relative z-10">
             <a
-              href="tel:+919876543210"
+              href="tel:+919123456789"
               className="p-4 rounded-3xl bg-white/70 backdrop-blur-md border border-neutral-200/80 shadow-2xs hover:shadow-md hover:bg-white transition-all flex items-center gap-3.5 group"
             >
-              <div className="w-10 h-10 rounded-2xl bg-neutral-900 text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
-                <Phone className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+                <Phone className="w-5 h-5 text-white" />
               </div>
               <div className="min-w-0">
-                <div className="text-xs font-bold text-neutral-400 uppercase tracking-wider">Direct Call</div>
-                <div className="text-sm font-semibold text-neutral-900 truncate">+91 98765 43210</div>
+                <div className="text-xs font-bold text-neutral-400 uppercase tracking-wider">
+                  Direct Call
+                </div>
+                <div className="text-sm font-semibold text-neutral-900 truncate">
+                  +91 9123456789
+                </div>
               </div>
             </a>
 
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/9111"
               target="_blank"
               rel="noopener noreferrer"
               className="p-4 rounded-3xl bg-white/70 backdrop-blur-md border border-neutral-200/80 shadow-2xs hover:shadow-md hover:bg-white transition-all flex items-center gap-3.5 group"
             >
-              <div className="w-10 h-10 rounded-2xl bg-emerald-700 text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
-                <MessageSquare className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+                <MessageSquare className="w-5 h-5 text-white" />
               </div>
               <div className="min-w-0">
-                <div className="text-xs font-bold text-neutral-400 uppercase tracking-wider">WhatsApp Chat</div>
-                <div className="text-sm font-semibold text-neutral-900 truncate">Instant Inquiry</div>
+                <div className="text-xs font-bold text-neutral-400 uppercase tracking-wider">
+                  WhatsApp Chat
+                </div>
+                <div className="text-sm font-semibold text-neutral-900 truncate
+                ">
+                  Instant Inquiry
+                </div>
               </div>
             </a>
 
             <div className="p-4 rounded-3xl bg-white/70 backdrop-blur-md border border-neutral-200/80 shadow-2xs flex items-center gap-3.5">
-              <div className="w-10 h-10 rounded-2xl bg-slate-800 text-white flex items-center justify-center shrink-0 shadow-sm">
-                <MapPin className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center shrink-0 shadow-sm">
+                <MapPin className="w-5 h-5 text-white" />
               </div>
               <div className="min-w-0">
-                <div className="text-xs font-bold text-neutral-400 uppercase tracking-wider">Resort Location</div>
-                <div className="text-sm font-semibold text-neutral-900 truncate">Valsad, Gujarat</div>
+                <div className="text-xs font-bold text-neutral-400 uppercase tracking-wider">
+                  Resort Location
+                </div>
+                <div className="text-sm font-semibold text-neutral-900 truncate">
+                  Valsad, Gujarat
+                </div>
               </div>
             </div>
           </div>
 
           {/* Grid Layout: Interactive Window Illustration vs Glassmorphic Form */}
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-            
             {/* Left Side: Window SVG Illustration */}
             <div className="md:col-span-5 flex flex-col items-center justify-center space-y-4">
-              <div className="relative w-full max-w-[320px] flex items-center justify-center p-2 rounded-3xl bg-white/60 border border-neutral-200/60 shadow-inner">
+              <div className="relative w-full max-w-[420px] flex items-center justify-center p-2 rounded-3xl">
                 {/* Progressive Window SVG Component */}
                 <Window progress={progress} className="w-full" />
-              </div>
-
-              {/* Live Interactive Progress Pill matching Hero badge */}
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-neutral-200 shadow-2xs text-xs text-neutral-700 font-semibold">
-                <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-pulse" />
-                <span>
-                  {progress === 0 && "Fill fields to reveal the window view"}
-                  {progress === 30 && "Name added — 30% View Unlocked"}
-                  {progress === 60 && "Contact added — 60% View Unlocked"}
-                  {progress === 100 && "Ready! 100% Window View Unlocked"}
-                </span>
               </div>
             </div>
 
@@ -137,7 +152,11 @@ export default function Contact() {
                       Inquiry Submitted!
                     </h3>
                     <p className="text-neutral-600 text-sm max-w-sm mx-auto leading-relaxed">
-                      Thank you, <span className="font-bold text-neutral-900">{name || "Traveler"}</span>! Our team at Aarunya will reach out to you shortly.
+                      Thank you,{" "}
+                      <span className="font-bold text-neutral-900">
+                        {name || "Traveler"}
+                      </span>
+                      ! Our team at Aarunya will reach out to you shortly.
                     </p>
                     <button
                       onClick={() => {
@@ -211,9 +230,9 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={filledCount === 0}
-                      className={`w-full py-3.5 px-6 rounded-4xl font-bold text-sm shadow-[inset_2px_2px_5px_0px_rgba(0,0,0,0.5),inset_-2px_-2px_6px_1px_rgba(80,78,78,0.5)] flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                      className={`w-40 py-3.5 px-6 rounded-4xl font-bold text-sm shadow-[inset_2px_2px_5px_0px_rgba(0,0,0,0.5),inset_-2px_-2px_6px_1px_rgba(80,78,78,0.5)] flex items-center justify-center gap-2 transition-all cursor-pointer ${
                         filledCount > 0
-                          ? "bg-neutral-900 hover:bg-black text-white active:scale-[0.98]"
+                          ? "bg-neutral-900 hover:bg-black text-white active:scale-[0.98] shadow-md"
                           : "bg-neutral-300 text-neutral-500 cursor-not-allowed shadow-none"
                       }`}
                     >
@@ -224,7 +243,6 @@ export default function Contact() {
                 )}
               </AnimatePresence>
             </div>
-
           </div>
         </motion.div>
       </div>

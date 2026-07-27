@@ -13,7 +13,11 @@ import {
 } from "lucide-react";
 import { Sparkles } from "lucide-react";
 
+import { useRouter } from "next/navigation";
+import Logo from "@/components/ui/logo";
+
 export const Hero = () => {
+  const router = useRouter();
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [guests, setGuests] = useState("2 Guests");
@@ -21,25 +25,56 @@ export const Hero = () => {
   const [showContactMenu, setShowContactMenu] = useState(false);
   const timelineRef = React.useRef<HTMLDivElement>(null);
 
+  const handleGo = () => {
+    const params = new URLSearchParams();
+    if (checkIn) params.set("checkIn", checkIn);
+    if (checkOut) params.set("checkOut", checkOut);
+    if (guests) params.set("guests", guests);
+    router.push(`/booking?${params.toString()}`);
+  };
+
   return (
     <section
       id="hero"
       ref={timelineRef}
-      className="min-h-screen text-black overflow-hidden flex flex-col items-center w-full"
+      className="min-h-screen text-black overflow-hidden flex flex-col items-center w-full relative -mt-[105px] pt-[95px] pb-12"
     >
-      <div className="absolute inset-0 z-0 bg-white/30" />
+      {/* Hero BG Image starting from top with 4 padding */}
+      <div className="absolute inset-4 z-0 rounded-3xl md:rounded-4xl overflow-hidden shadow-lg border border-white/60 pointer-events-none">
+        <img
+          src="/1.png"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src =
+              "https://i.pinimg.com/1200x/5d/e9/84/5de984dfc28f55d8df14bf57e9466f87.jpg";
+          }}
+          alt="Hero Background"
+          className="w-full h-full object-cover"
+        />
+        {/* Soft glassmorphic overlay for crisp text legibility */}
+        <div className="absolute inset-0 bg-black/5 " />
+      </div>
 
       {/* Hero Content */}
-      <div className=" z-10 text-center pt-25 pb-10 px-4 flex flex-col gap-2">
+      <div className="z-10 text-center pt-8 md:pt-12 pb-10 px-4 flex flex-col gap-2 items-center">
         <TimelineAnimation
           animationNum={1}
           timelineRef={timelineRef}
-          className="bg-white/30 backdrop-blur-md w-fit mx-auto px-3 py-1.5 rounded-full inline-flex items-center gap-2.5 shadow-md border border-white/60"
+          className="bg-white/30 backdrop-blur-md w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-md border border-white/60"
         >
           <span className="text-xs md:text-sm font-semibold tracking-tight text-slate-800">
             Valsad, Gujrat
           </span>
         </TimelineAnimation>
+
+        {/* Animated Logo between Pill & Heading */}
+        <motion.div
+          initial={{ opacity: 0, scale: 1, y: 0 }}
+          animate={{ opacity: 1, scale: 0.9, y: 0 }}
+          transition={{ duration: 0.1, delay: 0.1 }}
+          className="my-1 flex justify-center"
+        >
+          <Logo width={100} height={100} />
+        </motion.div>
 
         <TimelineAnimation
           as="h1"
@@ -169,6 +204,7 @@ export const Hero = () => {
 
             {/* CTA "Go" Button (matching Navbar primary button styles) */}
             <motion.button
+              onClick={handleGo}
               whileHover={{
                 scale: 1.03,
               }}

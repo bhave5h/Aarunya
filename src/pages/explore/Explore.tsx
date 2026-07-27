@@ -200,7 +200,10 @@ const TENTS_DATA: TentInfo[] = [
   }
 ];
 
+import { useRouter } from "next/navigation";
+
 export const Explore = () => {
+  const router = useRouter();
   const [selectedTentId, setSelectedTentId] = useState<number>(1);
   const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
 
@@ -376,8 +379,11 @@ export const Explore = () => {
                 </div>
 
                 {/* Hero-style Primary Button */}
-                <button className="w-full py-3 px-5 rounded-4xl bg-neutral-900 hover:bg-black active:scale-[0.98] text-white font-bold text-sm shadow-[inset_2px_2px_5px_0px_rgba(0,0,0,0.5),inset_-2px_-2px_6px_1px_rgba(80,78,78,0.5)] flex items-center justify-center gap-2 group transition-all cursor-pointer mt-2">
-                  <span>Reserve Tent #{activeTent.id}</span>
+                <button
+                  onClick={() => router.push(`/booking?tentId=${activeTent.id}`)}
+                  className="w-content py-3 px-5 rounded-4xl bg-neutral-900 hover:bg-black active:scale-[0.98] text-white font-bold text-sm shadow-[inset_2px_2px_5px_0px_rgba(0,0,0,0.5),inset_-2px_-2px_6px_1px_rgba(80,78,78,0.5)] flex items-center justify-center gap-2 group transition-all cursor-pointer mt-2"
+                >
+                  <span>Reserve Tent {activeTent.id}</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-white" />
                 </button>
               </motion.div>

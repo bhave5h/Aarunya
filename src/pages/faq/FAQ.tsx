@@ -42,16 +42,16 @@ const resortFaqData = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <section id="faq" className="w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-4xl mx-auto text-center space-y-3 mb-10 md:mb-14">
-        <div className="bg-white/40 backdrop-blur-md w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-sm border border-neutral-200">
+        <div className="w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-sm border border-neutral-200">
           <span className="text-xs md:text-sm font-semibold tracking-tight text-slate-800">
             Got Questions?
           </span>
         </div>
 
-        <h2 className="heading mx-auto">Frequently Asked Questions</h2>
-        <p className="subheading mx-auto">Everything You Need to Know</p>
+        <h2 className="heading mx-auto opacity-100">FAQ</h2>
+        <p className="subheading mx-auto"></p>
         <p className="para mx-auto max-w-xl">
           Details about tent check-in, dining options, activities, and staying at Aarunya.
         </p>
@@ -60,7 +60,7 @@ export default function FAQ() {
       <div className="flex justify-center">
         <FaqAccordion 
           data={resortFaqData}
-          className="max-w-[750px] w-full"
+          className="max-w-[620px] w-5xl shadow-inner"
         />
       </div>
     </section>

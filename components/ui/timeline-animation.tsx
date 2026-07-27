@@ -15,8 +15,20 @@ interface TimelineAnimationProps {
   [key: string]: any;
 }
 
+const componentCache = new Map<any, any>();
+
+function getMotionComponent(as: any) {
+  if (typeof as === "string" && (motion as any)[as]) {
+    return (motion as any)[as];
+  }
+  if (!componentCache.has(as)) {
+    componentCache.set(as, motion.create(as));
+  }
+  return componentCache.get(as);
+}
+
 export const TimelineAnimation: React.FC<TimelineAnimationProps> = ({
-  as = 'div',
+  as = "div",
   animationNum = 1,
   timelineRef,
   children,
@@ -25,7 +37,7 @@ export const TimelineAnimation: React.FC<TimelineAnimationProps> = ({
   alt,
   ...props
 }) => {
-  const Component = motion.create(as);
+  const Component = React.useMemo(() => getMotionComponent(as), [as]);
 
   return (
     <Component

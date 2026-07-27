@@ -34,21 +34,26 @@ body {
 
 .heading {
   font-family: var(--font-libre), serif;
-  font-weight: 300;
+  font-weight: 700;
   font-style: normal;
-  @apply text-6xl font-bold text-black/95 tracking-tight text-shadow-lg
-  
+  @apply text-4xl sm:text-5xl md:text-6xl font-bold text-neutral-950 tracking-tight text-shadow-lg;
 }
 
 .subheading {
   font-family: var(--font-libre), serif;
   font-style: italic;
-   @apply text-2xl text-black/80 text-shadow-sm tracking-wide;
+  font-weight: 400;
+  @apply text-xl sm:text-2xl text-neutral-800 tracking-wide; 
 }
 
 .para {
   font-family: var(--font-quicksand), sans-serif;
-  @apply text-black/70 text-xl font-semibold mx-auto leading-relaxed
+  @apply text-neutral-600 text-lg sm:text-xl font-semibold mx-auto leading-relaxed;
+}
+
+.load {
+  font-family: var(--font-quicksand), sans-serif;
+  @apply text-black/90 text-lg font-semibold mx-auto;
 }
 
 /* Custom sleek scrollbar for floating cards & modals */

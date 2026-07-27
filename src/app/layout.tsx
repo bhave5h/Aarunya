@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Libre_Baskerville, Quicksand } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Libre_Baskerville,
+  Quicksand,
+} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,6 +29,8 @@ const quicksand = Quicksand({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+import DesktopGuard from "@/components/ui/desktop-guard";
+
 export const metadata: Metadata = {
   title: "Aarunya",
   description: "A Beach Site Resort",
@@ -39,7 +46,16 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${libreBaskerville.variable} ${quicksand.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+        />
+      </head>
+      <body className="min-h-full flex flex-col">
+        <DesktopGuard>{children}</DesktopGuard>
+      </body>
     </html>
   );
 }

@@ -97,23 +97,23 @@ export const Reviews = () => {
 
   return (
     <section id="reviews" className="w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto space-y-8">
+      <div className="max-w-5xl mx-auto space-y-8">
         {/* Header Section */}
-        <div className="max-w-4xl mx-auto text-center space-y-3">
-          <div className="bg-white/40 backdrop-blur-md w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-sm border border-neutral-200">
+        <div className="max-w-4xl mx-auto text-center space-y-3 opacity-99">
+          <div className="w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-sm border border-neutral-200">
             <span className="text-xs md:text-sm font-semibold tracking-tight text-slate-800">
-              Explore Aarunya
+              Feedbacks
             </span>
           </div>
 
           {/* Heading & Subheading */}
 
-          <h1 className="heading mx-auto">Explore</h1>
+          <h1 className="heading mx-auto">Reviews</h1>
 
-          <h1 className="subheading mx-auto">One Beach, All Yours</h1>
+          <h1 className="subheading mx-auto">Tales From the Tide</h1>
 
-          <p className="para mx-auto">
-            Fifteen eco-friendly tents tucked between the hills and the sea
+          <p className="para mx-auto max-w-2xl">
+            Real stories from travelers who found their own quiet corner of paradise near Valsad's shores.
           </p>
         </div>
 

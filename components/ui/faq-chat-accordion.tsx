@@ -32,7 +32,7 @@ export function FaqAccordion({
   const [openItem, setOpenItem] = React.useState<string | null>("1");
 
   return (
-    <div className={cn("w-full max-w-lg p-4 font-sans", className)}>
+    <div className={cn("w-full max-w-lg border border-neutral-200 rounded-2xl p-4 font-sans", className)}>
       {timestamp && (
         <div className="mb-6 text-xs text-neutral-400 tracking-tight font-medium">
           {timestamp}

@@ -4,9 +4,9 @@ import { MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative z-10 w-full bg-neutral-950 text-white overflow-hidden border-t border-neutral-800">
+    <footer className="relative z-0 w-full bg-neutral-950 text-white overflow-hidden border-t border-neutral-800">
       {/* Upper Container */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 sm:py-20 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 relative z-10">
+      <div className="max-w-5xl  mx-auto px-0 py-16 sm:py-20 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 relative z-10">
         
         {/* Brand & Mission */}
         <div className="md:col-span-5 space-y-4">
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
 
       {/* Large Subtle Background Watermark */}
       <div className="relative overflow-hidden w-full py-4 text-center border-t border-neutral-900 bg-black/40">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium text-neutral-500">
+        <div className="max-w-5xl mx-auto px-0 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium text-neutral-500">
           <div>© {new Date().getFullYear()} Aarunya Eco Resort. All rights reserved.</div>
           <div className="flex gap-6">
             <a href="#" className="hover:text-neutral-300 transition">Privacy Policy</a>
