@@ -43,14 +43,14 @@ body {
   font-family: var(--font-libre), serif;
   font-weight: 700;
   font-style: normal;
-  @apply text-4xl sm:text-5xl md:text-6xl font-bold text-white/95 tracking-tight text-shadow-lg;
+  @apply text-4xl sm:text-5xl md:text-7xl font-bold text-white/95 tracking-tight text-shadow-lg;
 }
 
 .subheading {
   font-family: var(--font-libre), serif;
   font-style: italic;
   font-weight: 400;
-  @apply text-xl sm:text-2xl text-neutral-800 tracking-wide; 
+  @apply text-xl sm:text-2xl text-neutral-800 tracking-wide text-shadow-md; 
 }
 
 .para {
