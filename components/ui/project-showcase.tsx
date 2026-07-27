@@ -5,42 +5,42 @@ import type React from "react"
 import { useState, useRef, useEffect } from "react"
 import { ArrowUpRight } from "lucide-react"
 
-interface Project {
+interface Amenity {
   title: string
   description: string
-  year: string
+  tag: string
   link: string
   image: string
 }
 
-const projects: Project[] = [
+const amenities: Amenity[] = [
   {
-    title: "Lumina",
-    description: "AI-powered design system generator.",
-    year: "2024",
-    link: "#",
-    image: "https://plus.unsplash.com/premium_photo-1723489242223-865b4a8cf7b8?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0",
+    title: "Private Oceanfront Deck",
+    description: "Direct beach access with panoramic sea views & teak sun loungers.",
+    tag: "Beachfront",
+    link: "#explore",
+    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    title: "Flux",
-    description: "Real-time collaboration for creative teams.",
-    year: "2024",
-    link: "#",
-    image: "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0",
+    title: "En-Suite Teak Bathroom",
+    description: "Open-air rain showers with organic botanical toiletries.",
+    tag: "Luxury",
+    link: "#explore",
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    title: "Prism",
-    description: "Color palette extraction from any image.",
-    year: "2023",
-    link: "#",
-    image: "https://i.pinimg.com/1200x/99/ca/5c/99ca5cf82cf12df8801f7b2bef38d325.jpg",
+    title: "Coastal Dining & Cafe",
+    description: "Fresh sea-catch dining, coconut blends, and artisanal breakfasts.",
+    tag: "Dining",
+    link: "#contact",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    title: "Vertex",
-    description: "3D modeling toolkit for the web.",
-    year: "2023",
-    link: "#",
-    image: "https://i.pinimg.com/736x/7c/15/39/7c1539cf7ff0207cb49ce0d338de1e5f.jpg",
+    title: "Sunset Lounge & Bonfire",
+    description: "Evening acoustic rhythms, stargazing beanbags, and fireside warmth.",
+    tag: "Experience",
+    link: "#experience",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop",
   },
 ]
 
@@ -95,9 +95,15 @@ export function ProjectShowcase() {
   }
 
   return (
-    <section ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full max-w-xl mx-auto ">
+    <section id="amenities" ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full max-w-xl mx-auto py-12 md:py-20">
 
-<div className="mx-auto flex flex-col items-center justify-center space-y-1 pb-10">
+<div className="mx-auto flex flex-col items-center justify-center space-y-3 pb-8">
+  <div className="bg-white/40 backdrop-blur-md w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-sm border border-neutral-200">
+    <span className="text-xs md:text-sm font-semibold tracking-tight text-slate-800">
+      Resort Comforts
+    </span>
+  </div>
+
    <h1 className="heading mx-auto">
           Amenities
         </h1>
@@ -107,12 +113,10 @@ export function ProjectShowcase() {
         </h1>
 
         <p className="para mx-auto max-w-xl text-center">
-          Handcrafted Rajasthani interiors, sea-facing verandas and <br className="hidden sm:inline" />  private en-suite baths, only fifteen keys along the shore.
+          Handcrafted Rajasthani interiors, sea-facing verandas and <br className="hidden sm:inline" /> private en-suite baths, only fifteen keys along the shore.
         </p>
     
 </div>
-      
-      <h2 className="text-sm  text-center text-black  font-medium tracking-wide uppercase mb-8">Selected Work</h2>
 
       <div
         className="pointer-events-none fixed z-50 overflow-hidden rounded-xl shadow-2xl"
@@ -125,12 +129,12 @@ export function ProjectShowcase() {
           transition: "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), scale 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >
-        <div className="relative w-[280px] h-[180px] bg-secondary rounded-xl overflow-hidden">
-          {projects.map((project, index) => (
+        <div className="relative w-[280px] h-[180px] bg-neutral-100 rounded-xl overflow-hidden shadow-lg border border-neutral-200">
+          {amenities.map((amenity, index) => (
             <img
-              key={project.title}
-              src={project.image || "/placeholder.svg"}
-              alt={project.title}
+              key={amenity.title}
+              src={amenity.image}
+              alt={amenity.title}
               className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-out"
               style={{
                 opacity: hoveredIndex === index ? 1 : 0,
@@ -140,24 +144,24 @@ export function ProjectShowcase() {
             />
           ))}
           {/* Subtle gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         </div>
       </div>
 
       <div className="space-y-0">
-        {projects.map((project, index) => (
+        {amenities.map((amenity, index) => (
           <a
-            key={project.title}
-            href={project.link}
+            key={amenity.title}
+            href={amenity.link}
             className="group block"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="relative py-5 border-t border-border transition-all duration-300 ease-out">
+            <div className="relative py-5 border-t border-neutral-200 transition-all duration-300 ease-out">
               {/* Background highlight on hover */}
               <div
                 className={`
-                  absolute inset-0 -mx-4 px-4 bg-secondary/50 rounded-lg
+                  absolute inset-0 -mx-4 px-4 bg-neutral-100/60 rounded-xl
                   transition-all duration-300 ease-out
                   ${hoveredIndex === index ? "opacity-100 scale-100" : "opacity-0 scale-95"}
                 `}
@@ -167,13 +171,13 @@ export function ProjectShowcase() {
                 <div className="flex-1 min-w-0">
                   {/* Title with animated underline */}
                   <div className="inline-flex items-center gap-2">
-                    <h3 className="text-foreground font-medium text-lg tracking-tight">
+                    <h3 className="text-neutral-900 font-semibold text-lg tracking-tight">
                       <span className="relative">
-                        {project.title}
+                        {amenity.title}
                         {/* Animated underline */}
                         <span
                           className={`
-                            absolute left-0 -bottom-0.5 h-px bg-foreground
+                            absolute left-0 -bottom-0.5 h-px bg-neutral-900
                             transition-all duration-300 ease-out
                             ${hoveredIndex === index ? "w-full" : "w-0"}
                           `}
@@ -184,7 +188,7 @@ export function ProjectShowcase() {
                     {/* Arrow that slides in */}
                     <ArrowUpRight
                       className={`
-                        w-4 h-4 text-muted-foreground
+                        w-4 h-4 text-neutral-500
                         transition-all duration-300 ease-out
                         ${
                           hoveredIndex === index
@@ -198,24 +202,24 @@ export function ProjectShowcase() {
                   {/* Description with fade effect */}
                   <p
                     className={`
-                      text-muted-foreground text-sm mt-1 leading-relaxed
+                      text-neutral-600 text-sm mt-1 leading-relaxed
                       transition-all duration-300 ease-out
-                      ${hoveredIndex === index ? "text-foreground/70" : "text-muted-foreground"}
+                      ${hoveredIndex === index ? "text-neutral-900" : "text-neutral-600"}
                     `}
                   >
-                    {project.description}
+                    {amenity.description}
                   </p>
                 </div>
 
-                {/* Year badge */}
+                {/* Tag badge */}
                 <span
                   className={`
-                    text-xs font-mono text-muted-foreground tabular-nums
+                    text-xs font-semibold text-neutral-500 bg-neutral-100 px-2.5 py-1 rounded-full border border-neutral-200/80
                     transition-all duration-300 ease-out
-                    ${hoveredIndex === index ? "text-foreground/60" : ""}
+                    ${hoveredIndex === index ? "bg-neutral-900 text-white border-neutral-900" : ""}
                   `}
                 >
-                  {project.year}
+                  {amenity.tag}
                 </span>
               </div>
             </div>

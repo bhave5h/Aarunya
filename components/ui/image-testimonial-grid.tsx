@@ -1,8 +1,8 @@
 "use client";
 
-import * as React from 'react';
-import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
+import * as React from "react";
+import { motion, Variants } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 interface MasonryGridProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -17,6 +17,18 @@ interface MasonryGridProps extends React.HTMLAttributes<HTMLDivElement> {
   gap?: number;
 }
 
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
 const MasonryGrid = React.forwardRef<HTMLDivElement, MasonryGridProps>(
   ({ className, columns = 3, gap = 4, children, ...props }, ref) => {
     // Dynamically create the style object for column layout
@@ -25,21 +37,13 @@ const MasonryGrid = React.forwardRef<HTMLDivElement, MasonryGridProps>(
       columnGap: `${gap * 0.25}rem`, // Converts gap unit to rem
     };
 
-    // Animation variants for child elements
-    const cardVariants = {
-      hidden: { opacity: 0, y: 20 },
-      visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-          duration: 0.5,
-          ease: "easeOut",
-        },
-      },
-    };
-
     return (
-      <div ref={ref} style={style} className={cn('max-w-5xl mx-auto ', className)} {...props}>
+      <div
+        ref={ref}
+        style={style}
+        className={cn("max-w-5xl mx-auto ", className)}
+        {...props}
+      >
         {React.Children.map(children, (child) => (
           <motion.div
             className="mb-4 break-inside-avoid" // Prevents items from breaking across columns
@@ -53,9 +57,9 @@ const MasonryGrid = React.forwardRef<HTMLDivElement, MasonryGridProps>(
         ))}
       </div>
     );
-  }
+  },
 );
 
-MasonryGrid.displayName = 'MasonryGrid';
+MasonryGrid.displayName = "MasonryGrid";
 
 export { MasonryGrid };

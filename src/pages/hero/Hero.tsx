@@ -23,6 +23,7 @@ export const Hero = () => {
 
   return (
     <section
+      id="hero"
       ref={timelineRef}
       className="min-h-screen text-black overflow-hidden flex flex-col items-center w-full"
     >

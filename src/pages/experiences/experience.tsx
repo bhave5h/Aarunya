@@ -121,6 +121,7 @@ export const Experience = () => {
 
   return (
     <section
+      id="experience"
       ref={sectionRef}
       className="relative w-full py-16 md:py-24 px-4 overflow-hidden bg-[#ffffff] select-none"
     >

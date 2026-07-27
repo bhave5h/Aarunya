@@ -207,7 +207,7 @@ export const Explore = () => {
   const activeTent = TENTS_DATA.find((t) => t.id === selectedTentId) || TENTS_DATA[0];
 
   return (
-    <section className="relative w-full max-w-6xl mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="explore" className="relative w-full max-w-6xl mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Header Section matching Hero.tsx styling */}
       <div className="max-w-4xl mx-auto text-center space-y-3 mb-10 md:mb-14">
         {/* Pill Tag */}
@@ -250,7 +250,7 @@ export const Explore = () => {
           </div>
 
           {/* Floating Room Details Card (Appearing ON and INSIDE IT on the Left Side) */}
-          <div className="scroll-hidden absolute top-4 left-4 right-4 sm:left-auto bottom-auto lg:top-3 lg:right-4 lg:bottom-6 z-30ss w-full sm:w-[380px] md:w-[420px] max-w-[calc(100%-2rem)]">
+          <div className="absolute top-4 left-4 right-4 sm:left-auto bottom-auto lg:top-3 lg:right-4 lg:bottom-6 z-30 w-full sm:w-[380px] md:w-[420px] max-w-[calc(100%-2rem)]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTent.id}
@@ -258,7 +258,7 @@ export const Explore = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -15, scale: 0.98 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                className="bg-white/20 backdrop-blur-2xl border border-white/90 rounded-3xl p-5 md:p-6 shadow-2xl space-y-4 max-h-[85vh] lg:max-h-[calc(100vh-12rem)] overflow-y-auto"
+                className="bg-white/20 backdrop-blur-2xl border border-white/90 rounded-3xl p-5 md:p-6 shadow-2xl space-y-4 max-h-[85vh] lg:max-h-[calc(100vh-12rem)] overflow-y-auto custom-scrollbar"
               >
                 {/* Category Pill & ID Header */}
                 <div className="flex items-center justify-between">
