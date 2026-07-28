@@ -42,16 +42,16 @@ export const Hero = () => {
       {/* Hero BG Image starting from top with 4 padding */}
       <div className="absolute inset-4 z-0 rounded-3xl md:rounded-4xl overflow-hidden shadow-lg border-white/10 border-1 pointer-events-none">
         <img
-          src="/1.png"
+          src="/4.png"
           onError={(e) => {
             (e.target as HTMLImageElement).src =
               "https://i.pinimg.com/1200x/5d/e9/84/5de984dfc28f55d8df14bf57e9466f87.jpg";
           }}
           alt="Hero Background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover bg-white/30  backdrop-blur-md to-black"
         />
         {/* Soft glassmorphic overlay for crisp text legibility */}
-        <div className="absolute inset-0 shadow-inside " />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/10 shadow-inside " />
       </div>
 
       {/* Hero Content */}

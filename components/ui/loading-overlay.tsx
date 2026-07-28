@@ -17,7 +17,7 @@ export function LoadingOverlay({ onComplete, children }: LoadingOverlayProps) {
 
   useEffect(() => {
     // Animate percentage from 0 to 100 over 2 seconds
-    const duration = 2000;
+    const duration = 3000;
     const startTime = Date.now();
 
     const animatePercentage = () => {
@@ -57,7 +57,7 @@ export function LoadingOverlay({ onComplete, children }: LoadingOverlayProps) {
           left: 0,
           right: 0,
           bottom: 0,
-          zIndex: 99999,
+          zIndex: 1000,
           clipPath: isClipping ? "inset(0 0 100% 0)" : "inset(0 0 0% 0)",
           pointerEvents: isClipping ? "none" : "auto",
           transition: "clip-path 0.4s ease-in-out",
@@ -69,15 +69,14 @@ export function LoadingOverlay({ onComplete, children }: LoadingOverlayProps) {
             position: "absolute",
             left: "clamp(1.5rem, 3vw, 4rem)",
             top: "clamp(1.5rem, 3vw, 4rem)",
-            fontSize: "clamp(1rem, 2vw, 1.5rem)",
+            fontSize: "clamp(5rem, 8vw, 15rem)",
             letterSpacing: "0.05em",
-            fontWeight: 600,
+            fontWeight: 900,
           }}
           className="text-neutral-300 flex items-center gap-2"
         >
             <Logo width={70} height={70} />
-
-          <span className="heading">Aarunya</span>
+            <span className="heading">Aarunyaa</span>
         </div>
 
         {/* Percentage Counter */}
@@ -86,13 +85,13 @@ export function LoadingOverlay({ onComplete, children }: LoadingOverlayProps) {
             position: "absolute",
             right: "clamp(1rem, 2vw, 3rem)",
             bottom: "clamp(1rem, 2vw, 3rem)",
-            fontSize: "clamp(3rem, 5vw, 12rem)",
+            fontSize: "clamp(5rem, 8vw, 15rem)",
             fontWeight: 900,
             lineHeight: 1,
           }}
-          className="tracking-tight text-black load "
+          className="tracking-tight text-black heading"
         >
-          {percentage}%
+          {percentage} %
         </div>
       </div>
 

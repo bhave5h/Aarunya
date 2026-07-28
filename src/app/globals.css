@@ -34,9 +34,9 @@ body {
 
 .heading {
   font-family: var(--font-libre), serif;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
-  @apply text-4xl sm:text-5xl md:text-6xl font-bold text-neutral-950 tracking-tight text-shadow-lg;
+  @apply text-5xl font-bold text-neutral-950 tracking-tight text-shadow-lg;
 }
 
 .headingh {

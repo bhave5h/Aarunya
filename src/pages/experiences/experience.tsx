@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "@/hooks/use-media-query";
@@ -12,8 +12,8 @@ const frames = [
     alt: "Bonfire Experience",
     width: 700,
     height: 868,
-    rotate: -6,
-    zIndex: 10,
+    rotate: 4,
+    zIndex: 25,
   },
   {
     id: "f2",
@@ -21,8 +21,8 @@ const frames = [
     alt: "A Beautiful Escapee",
     width: 700,
     height: 868,
-    rotate: -6,
-    zIndex: 20,
+    rotate: -4,
+    zIndex: 24,
   },
   {
     id: "f3",
@@ -30,8 +30,8 @@ const frames = [
     alt: "Sunset Experience",
     width: 700,
     height: 868,
-    rotate: 0,
-    zIndex: 25,
+    rotate: 4,
+    zIndex: 23,
   },
   {
     id: "f4",
@@ -39,8 +39,8 @@ const frames = [
     alt: "Kayaking Experience",
     width: 700,
     height: 868,
-    rotate: 3,
-    zIndex: 30,
+    rotate: -2,
+    zIndex: 22,
   },
   {
     id: "f5",
@@ -48,8 +48,8 @@ const frames = [
     alt: "Kayaking Experience",
     width: 700,
     height: 868,
-    rotate: 6,
-    zIndex: 20,
+    rotate: -4,
+    zIndex: 21,
   },
 
   {
@@ -58,8 +58,8 @@ const frames = [
     alt: "Kayaking Experience",
     width: 700,
     height: 868,
-    rotate: 8,
-    zIndex: 10,
+    rotate: 4,
+    zIndex: 20,
   },
   {
     id: "f7",
@@ -67,7 +67,7 @@ const frames = [
     alt: "Kayaking Experience",
     width: 700,
     height: 868,
-    rotate: 8,
+    rotate: -4,
     zIndex: 10,
   },
 ];
@@ -76,6 +76,23 @@ export const Experience = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isMobile = useMediaQuery("(max-width: 640px)");
   const isTablet = useMediaQuery("(max-width: 1024px)");
+
+  // State to track individual card z-indices so clicking or dragging brings a card to top
+  const [zIndices, setZIndices] = useState<Record<string, number>>(() =>
+    frames.reduce((acc, f) => ({ ...acc, [f.id]: f.zIndex }), {})
+  );
+  const [topZIndex, setTopZIndex] = useState(30);
+
+  const bringToFront = (id: string) => {
+    setTopZIndex((prev) => {
+      const nextZ = prev + 1;
+      setZIndices((current) => ({
+        ...current,
+        [id]: nextZ,
+      }));
+      return nextZ;
+    });
+  };
 
   // Responsive target X coordinates when fanned out
   const getTargetX = (id: string) => {
@@ -93,11 +110,11 @@ export const Experience = () => {
     }
     // Desktop layout
     if (id === "f1") return -450;
-    if (id === "f2") return -250;
-    if (id === "f3") return -100;
-    if (id === "f4") return 10;
-    if (id === "f5") return 100;
-    if (id === "f6") return 260;
+    if (id === "f2") return -300;
+    if (id === "f3") return -150;
+    if (id === "f4") return 0;
+    if (id === "f5") return 150;
+    if (id === "f6") return 300;
     if (id === "f7") return 450;
     return 0;
   };
@@ -110,12 +127,13 @@ export const Experience = () => {
       if (id === "f3") return -15;
       if (id === "f4") return 10;
     }
-    if (id === "f1") return -0;
-    if (id === "f2") return 5;
-    if (id === "f3") return -5;
-    if (id === "f4") return 0;
-    if (id === "f5") return 5;
-    if (id === "f6") return 0;
+    if (id === "f1") return 1;
+    if (id === "f2") return 1;
+    if (id === "f3") return 1;
+    if (id === "f4") return 1;
+    if (id === "f5") return 1;
+    if (id === "f6") return 1;
+    if (id === "f7") return 1;
     return 0;
   };
 
@@ -123,7 +141,7 @@ export const Experience = () => {
     <section
       id="experience"
       ref={sectionRef}
-      className="relative w-full py-16 md:py-24 px-4 overflow-hidden bg-[#ffffff] select-none"
+      className="relative w-full h-screen py-16 md:py-24 px-4 overflow-hidden select-none"
     >
       {/* Header Section */}
       <div className="max-w-3xl mx-auto text-center space-y-3 mb-12 md:mb-16 pointer-events-none">
@@ -143,16 +161,28 @@ export const Experience = () => {
       </div>
 
       {/* Draggable Frames Container */}
-      <div className="max-w-5xl mx-auto relative min-h-[300px] flex items-center justify-center">
+      <div className="max-w-5xl mx-auto relative min-h-[210px] flex items-center justify-center">
         <div className="absolute inset-0 flex items-center justify-center">
           {frames.map((frame, index) => (
             <motion.div
               key={frame.id}
               drag
               dragConstraints={sectionRef}
-              dragElastic={0.15}
-              whileDrag={{ scale: 1.20, zIndex: 100, cursor: "grabbing" }}
-              whileHover={{ scale: 1.15, zIndex: 50 }}
+              dragElastic={0.1}
+              onPointerDown={() => bringToFront(frame.id)}
+              onDragStart={() => bringToFront(frame.id)}
+              whileHover={{
+                scale: 1.2,
+                // zIndex intentionally omitted so hover does NOT bring image on top
+              }}
+              whileDrag={{
+                scale: 1,
+                scaleX: 1.05,
+                scaleY: 1.05,
+                rotate: frame.rotate + (frame.rotate > 0 ? 5 : -5),
+                borderRadius: "28px 14px 32px 16px",
+                cursor: "grabbing",
+              }}
               initial={{
                 opacity: 0,
                 x: 0,
@@ -168,13 +198,13 @@ export const Experience = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{
                 type: "spring",
-                stiffness: 60,
+                stiffness: 220,
                 damping: 15,
-                mass: 1,
+                mass: 0.8,
                 delay: index * 0.12,
               }}
-              style={{ zIndex: frame.zIndex }}
-              className="absolute cursor-grab active:cursor-grabbing select-none touch-none shrink-0"
+              style={{ zIndex: zIndices[frame.id] }}
+              className="absolute cursor-grab active:cursor-grabbing select-none touch-none shrink-0 transition-shadow duration-100"
             >
               <Image
                 src={frame.src}
@@ -183,7 +213,7 @@ export const Experience = () => {
                 height={frame.height}
                 priority
                 draggable={false}
-                className="w-[200px] h-auto object-contain pointer-events-none drop-shadow-xl hover:drop-shadow-3xl transition-all duration-100 ease-in"
+                className="w-[200px] h-auto object-contain pointer-events-none drop-shadow-2xl transition-all duration-100 ease-out"
               />
             </motion.div>
           ))}
