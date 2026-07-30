@@ -73,7 +73,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative bg-white/40 backdrop-blur-2xl border border-neutral-200/80 rounded-4xl shadow-xl p-6 sm:p-10 md:p-12 overflow-hidden"
+          className="relative bg-white/40 backdrop-blur-md border border-neutral-200/80 rounded-4xl shadow-inside p-6 sm:p-10 md:p-12 overflow-hidden"
         >
           {/* Subtle Ambient Background Gradient Glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-amber-50/20 pointer-events-none" />

@@ -50,20 +50,20 @@ body {
   font-family: var(--font-libre), serif;
   font-weight: 700;
   font-style: normal;
-  @apply text-4xl sm:text-5xl md:text-7xl font-bold text-white/95 tracking-tight text-shadow-lg;
+  @apply text-4xl sm:text-5xl md:text-7xl font-bold text-black/95 tracking-tight text-shadow-lg;
 }
 
 .hsubheading {
   font-family: var(--font-libre), serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
-  @apply text-xl sm:text-2xl text-white/90 tracking-wide text-shadow-lg; 
+  @apply text-xl sm:text-2xl text-black/85 tracking-wide text-shadow-lg; 
 }
 
 .hpara {
   font-family: var(--font-quicksand), sans-serif;
   font-weight: 400;
-  @apply text-xl text-white/80 font-medium mx-auto leading-relaxed text-shadow-lg;
+  @apply text-xl text-black/90 font-medium mx-auto leading-relaxed text-shadow-lg;
 }
 
 
