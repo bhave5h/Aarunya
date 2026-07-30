@@ -1,115 +1,217 @@
+"use client";
+
 import React from "react";
 import Logo from "./logo";
-import { MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative z-0 w-full bg-neutral-950 text-white overflow-hidden border-t border-neutral-800">
-      {/* Upper Container */}
-      <div className="max-w-5xl  mx-auto px-0 py-16 sm:py-20 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 relative z-10">
-        
-        {/* Brand & Mission */}
-        <div className="md:col-span-5 space-y-4">
-          <div className="flex items-center gap-3">
-            <Logo />
-            <span className="text-2xl font-bold tracking-tight text-white">
-              Aarunya
-            </span>
+    <footer className="w-full text-stone-900 relative z-10 pt-16 pb-0 mb-0 overflow-hidden border-t border-stone-200/60">
+      {/* Main Light Cream Footer Body (Desktop Optimized) */}
+      <div className="max-w-6xl mx-auto px-8 relative z-10 pt-4 pb-0 mb-0">
+        {/* Upper Link Columns & Logo Row */}
+        <div className="grid grid-cols-12 gap-12">
+          {/* Brand & Mission Column */}
+          <div className="col-span-4 space-y-4">
+            <BlurFade delay={0.1} inView>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl font-bold tracking-tight text-stone-900 font-serif">
+                  Aarunya
+                </span>
+              </div>
+              <div className="pt-4 text-xs font-medium text-stone-500 space-y-1">
+                <p>© {new Date().getFullYear()} Aarunya Eco Tented Resort.</p>
+                <p>All rights reserved.</p>
+              </div>
+            </BlurFade>
           </div>
-          <p className="text-neutral-400 text-sm leading-relaxed max-w-sm font-medium">
-            Where dawn meets the sea. A secluded eco-tented resort nestled along the private coastal sanctuary of Valsad, Gujarat.
+
+          {/* 4 Category Link Columns (Desktop Grid) */}
+          <div className="col-span-8 grid grid-cols-4 gap-8">
+            {/* Column 1: Resort */}
+            <BlurFade delay={0.15} inView>
+              <div>
+                <h4 className="text-xs font-semibold text-stone-400 mb-4 tracking-wider font-mono uppercase">
+                  Resort
+                </h4>
+                <ul className="space-y-3 text-sm font-medium text-stone-900">
+                  <li>
+                    <a
+                      href="#explore"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      Oceanfront Tents
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#explore"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      Luxury Villa Suites
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#amenities"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      Resort Amenities
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#explore"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      Sanctuary Map
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </BlurFade>
+
+            {/* Column 2: Experiences */}
+            <BlurFade delay={0.2} inView>
+              <div>
+                <h4 className="text-xs font-semibold text-stone-400 mb-4 tracking-wider font-mono uppercase">
+                  Experiences
+                </h4>
+                <ul className="space-y-3 text-sm font-medium text-stone-900">
+                  <li>
+                    <a
+                      href="#experience"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      Coastal Dining
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#experience"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      Sunset Yoga & Spa
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#experience"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      Beachfront Bonfire
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#experience"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      Eco Nature Trails
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </BlurFade>
+
+            {/* Column 3: Information */}
+            <BlurFade delay={0.25} inView>
+              <div>
+                <h4 className="text-xs font-semibold text-stone-400 mb-4 tracking-wider font-mono uppercase">
+                  Information
+                </h4>
+                <ul className="space-y-3 text-sm font-medium text-stone-900">
+                  <li>
+                    <a
+                      href="#reviews"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      Guest Reviews
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#faq"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      FAQ & Guidelines
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#booking"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      Terms of Stay
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#booking"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      Privacy Policy
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </BlurFade>
+
+            {/* Column 4: Connect */}
+            <BlurFade delay={0.3} inView>
+              <div>
+                <h4 className="text-xs font-semibold text-stone-400 mb-4 tracking-wider font-mono uppercase">
+                  Connect
+                </h4>
+                <ul className="space-y-3 text-sm font-medium text-stone-900">
+                  <li>
+                    <a
+                      href="https://instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      Instagram
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://facebook.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://tripadvisor.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      TripAdvisor
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#contact"
+                      className="hover:text-stone-600 transition-colors"
+                    >
+                      Contact Concierge
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </BlurFade>
+          </div>
+        </div>
+
+        <div className="w-full flex justify-end items-end select-none pointer-events-none pb-0 leading-none">
+          <p className="m-0 text-transparent text-[13.2rem] font-serif font-bold uppercase tracking-tight leading-none bg-[url('/aa.gif')] bg-contain [length:100%_auto] bg-no-repeat bg-cover bg-clip-text opacity-95 translate-y-10">
+            Aarunya
           </p>
-          <div className="flex items-center gap-2 pt-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs font-semibold text-neutral-300">
-              Open 365 Days • Booking Season 2026
-            </span>
-          </div>
-        </div>
-
-        {/* Quick Links */}
-        <div className="md:col-span-3 space-y-3">
-          <h4 className="text-xs font-bold uppercase tracking-widest text-neutral-400">
-            Explore Resort
-          </h4>
-          <ul className="space-y-2.5 text-sm font-semibold text-neutral-300">
-            <li>
-              <a href="#hero" className="hover:text-white transition flex items-center gap-1 group">
-                <span>Home Sanctuary</span>
-              </a>
-            </li>
-            <li>
-              <a href="#experience" className="hover:text-white transition flex items-center gap-1 group">
-                <span>Experiences</span>
-              </a>
-            </li>
-            <li>
-              <a href="#explore" className="hover:text-white transition flex items-center gap-1 group">
-                <span>Tent Map & Suites</span>
-              </a>
-            </li>
-            <li>
-              <a href="#amenities" className="hover:text-white transition flex items-center gap-1 group">
-                <span>Amenities</span>
-              </a>
-            </li>
-            <li>
-              <a href="#reviews" className="hover:text-white transition flex items-center gap-1 group">
-                <span>Guest Reviews</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Contact & Socials */}
-        <div className="md:col-span-4 space-y-3">
-          <h4 className="text-xs font-bold uppercase tracking-widest text-neutral-400">
-            Reach Out
-          </h4>
-          <ul className="space-y-3 text-sm text-neutral-300">
-            <li className="flex items-center gap-3">
-              <MapPin className="w-4 h-4 text-neutral-400 shrink-0" />
-              <span>Valsad Coastal Highway, Gujarat 396001</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <Phone className="w-4 h-4 text-neutral-400 shrink-0" />
-              <a href="tel:+919876543210" className="hover:text-white transition font-semibold">
-                +91 98765 43210
-              </a>
-            </li>
-            <li className="flex items-center gap-3">
-              <Mail className="w-4 h-4 text-neutral-400 shrink-0" />
-              <a href="mailto:stay@aarunyaresort.com" className="hover:text-white transition">
-                stay@aarunyaresort.com
-              </a>
-            </li>
-          </ul>
-
-          <div className="pt-2 flex items-center gap-3">
-            {["Instagram", "Facebook", "TripAdvisor"].map((social) => (
-              <a
-                key={social}
-                href="#"
-                className="px-3 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:text-white hover:border-neutral-600 transition flex items-center gap-1"
-              >
-                <span>{social}</span>
-                <ArrowUpRight className="w-3 h-3 text-neutral-500" />
-              </a>
-            ))}
-          </div>
-        </div>
-
-      </div>
-
-      {/* Large Subtle Background Watermark */}
-      <div className="relative overflow-hidden w-full py-4 text-center border-t border-neutral-900 bg-black/40">
-        <div className="max-w-5xl mx-auto px-0 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium text-neutral-500">
-          <div>© {new Date().getFullYear()} Aarunya Eco Resort. All rights reserved.</div>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-neutral-300 transition">Privacy Policy</a>
-            <a href="#" className="hover:text-neutral-300 transition">Terms of Stay</a>
-            <a href="#" className="hover:text-neutral-300 transition">Eco Standards</a>
-          </div>
         </div>
       </div>
     </footer>

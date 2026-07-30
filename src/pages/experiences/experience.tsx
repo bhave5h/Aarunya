@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 const frames = [
   {
@@ -151,8 +152,12 @@ export const Experience = () => {
           </span>
         </div>
 
-        <h2 className="heading">Experience</h2>
-        <p className="subheading">Live Slower, Feel Everything</p>
+        <BlurFade delay={0.15} inView>
+          <h2 className="heading">Experience</h2>
+        </BlurFade>
+        <BlurFade delay={0.3} inView>
+          <p className="subheading">Live Slower, Feel Everything</p>
+        </BlurFade>
         <p className="para">
           Bonfire nights, folk dances, sunrise kayaking and dolphin
           <br className="hidden sm:inline" /> spotting days shaped by the tide,

@@ -201,6 +201,7 @@ const TENTS_DATA: TentInfo[] = [
 ];
 
 import { useRouter } from "next/navigation";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 export const Explore = () => {
   const router = useRouter();
@@ -221,14 +222,17 @@ export const Explore = () => {
         </div>
 
         {/* Heading & Subheading */}
+        <BlurFade delay={0.15} inView>
+          <h1 className="heading mx-auto">
+            Explore
+          </h1>
+        </BlurFade>
 
-        <h1 className="heading mx-auto">
-          Explore
-        </h1>
-
-        <h1 className="subheading mx-auto">
-          One Beach, All Yours
-        </h1>
+        <BlurFade delay={0.3} inView>
+          <p className="subheading mx-auto">
+            One Beach, All Yours
+          </p>
+        </BlurFade>
 
         <p className="para mx-auto">
           Fifteen eco-friendly tents tucked between the hills and the sea

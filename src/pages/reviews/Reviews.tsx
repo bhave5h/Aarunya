@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { MasonryGrid } from "@/components/ui/image-testimonial-grid";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 // --- Data for resort guest reviews ---
 const testimonials = [
@@ -107,10 +108,13 @@ export const Reviews = () => {
           </div>
 
           {/* Heading & Subheading */}
+          <BlurFade delay={0.15} inView>
+            <h1 className="heading mx-auto">Reviews</h1>
+          </BlurFade>
 
-          <h1 className="heading mx-auto">Reviews</h1>
-
-          <h1 className="subheading mx-auto">Tales From the Tide</h1>
+          <BlurFade delay={0.3} inView>
+            <p className="subheading mx-auto">Tales From the Tide</p>
+          </BlurFade>
 
           <p className="para mx-auto max-w-2xl">
             Real stories from travelers who found their own quiet corner of paradise near Valsad's shores.

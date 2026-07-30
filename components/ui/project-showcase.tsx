@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
 import { ArrowUpRight } from "lucide-react"
+import { BlurFade } from "@/components/ui/blur-fade"
 
 interface Amenity {
   title: string
@@ -104,13 +105,17 @@ export function ProjectShowcase() {
     </span>
   </div>
 
-   <h1 className="heading mx-auto">
-          Amenities
-        </h1>
+   <BlurFade delay={0.15} inView>
+     <h1 className="heading mx-auto">
+       Amenities
+     </h1>
+   </BlurFade>
 
-        <h1 className="subheading mx-auto">
-          Tents Fit for a Maharaja
-        </h1>
+   <BlurFade delay={0.3} inView>
+     <p className="subheading mx-auto">
+       Tents Fit for a Maharaja
+     </p>
+   </BlurFade>
 
         <p className="para mx-auto max-w-xl text-center">
           Handcrafted Rajasthani interiors, sea-facing verandas and <br className="hidden sm:inline" /> private en-suite baths, only fifteen keys along the shore.

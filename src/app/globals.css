@@ -34,16 +34,9 @@ body {
 
 .heading {
   font-family: var(--font-libre), serif;
-  font-weight: 500;
+  font-weight: 100;
   font-style: normal;
-  @apply text-5xl font-bold text-neutral-950 tracking-tight text-shadow-lg;
-}
-
-.headingh {
-  font-family: var(--font-libre), serif;
-  font-weight: 700;
-  font-style: normal;
-  @apply text-4xl sm:text-5xl md:text-7xl font-bold text-white/95 tracking-tight text-shadow-lg;
+  @apply text-4xl font-bold text-neutral-950 tracking-tight text-shadow-lg;
 }
 
 .subheading {
@@ -52,6 +45,27 @@ body {
   font-weight: 400;
   @apply text-xl sm:text-2xl text-neutral-800 tracking-wide text-shadow-md; 
 }
+
+.hheading {
+  font-family: var(--font-libre), serif;
+  font-weight: 700;
+  font-style: normal;
+  @apply text-4xl sm:text-5xl md:text-7xl font-bold text-white/95 tracking-tight text-shadow-lg;
+}
+
+.hsubheading {
+  font-family: var(--font-libre), serif;
+  font-style: italic;
+  font-weight: 400;
+  @apply text-xl sm:text-2xl text-white/90 tracking-wide text-shadow-lg; 
+}
+
+.hpara {
+  font-family: var(--font-quicksand), sans-serif;
+  font-weight: 400;
+  @apply text-xl text-white/80 font-medium mx-auto leading-relaxed text-shadow-lg;
+}
+
 
 .para {
   font-family: var(--font-quicksand), sans-serif;
@@ -63,7 +77,7 @@ body {
   @apply text-black/90 text-lg font-semibold mx-auto;
 }
 
-/* Custom sleek scrollbar for floating cards & modals */
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
@@ -78,5 +92,23 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.45);
 }
+
+@keyframes text-bg-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-text {
+  background-size: 200% auto;
+  animation: text-bg-move 10s ease infinite;
+}
+
 
 

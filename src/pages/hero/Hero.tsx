@@ -15,6 +15,7 @@ import { Sparkles } from "lucide-react";
 
 import { useRouter } from "next/navigation";
 import Logo from "@/components/ui/logo";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 export const Hero = () => {
   const router = useRouter();
@@ -37,12 +38,12 @@ export const Hero = () => {
     <section
       id="hero"
       ref={timelineRef}
-      className="min-h-screen text-black overflow-hidden flex flex-col items-center w-full relative -mt-[105px] pt-[95px] pb-12"
+      className="min-h-screen text-black flex flex-col items-center w-full relative -mt-[105px] pt-[95px] pb-12"
     >
       {/* Hero BG Image starting from top with 4 padding */}
-      <div className="absolute inset-4 z-0 rounded-3xl md:rounded-4xl overflow-hidden shadow-lg border-white/10 border-1 pointer-events-none">
+      <div className="absolute inset-4 z-0 rounded-3xl md:rounded-4xl overflow-hidden shadow-2xl border-white/10 border-2 pointer-events-none">
         <img
-          src="/4.png"
+          src="/sea.png"
           onError={(e) => {
             (e.target as HTMLImageElement).src =
               "https://i.pinimg.com/1200x/5d/e9/84/5de984dfc28f55d8df14bf57e9466f87.jpg";
@@ -51,11 +52,11 @@ export const Hero = () => {
           className="w-full h-full object-cover"
         />
         {/* Soft glassmorphic overlay for crisp text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/10 shadow-inside " />
+        <div className="absolute inset-0 " />
       </div>
 
       {/* Hero Content */}
-      <div className="z-10 text-center pt-8 md:pt-12 pb-10 px-4 flex flex-col gap-2 items-center">
+      <div className="z-10 text-center pt-8 md:pt-12 pb-10 px-4 flex flex-col gap-1 items-center">
         <TimelineAnimation
           animationNum={1}
           timelineRef={timelineRef}
@@ -76,29 +77,23 @@ export const Hero = () => {
           <Logo width={100} height={100} />
         </motion.div>
 
-        <TimelineAnimation
-          as="h1"
-          animationNum={2}
-          timelineRef={timelineRef}
-          className="headingh text-6xl font-bold tracking-tight text-neutral-900 max-w-6xl"
-        >
-          Aarunya
-        </TimelineAnimation>
+        <BlurFade delay={0.2} inView>
+          <h1 className="hheading text-6xl font-bold tracking-tight text-neutral-900 max-w-6xl">
+            Aarunya
+          </h1>
+        </BlurFade>
 
-        <TimelineAnimation
-          as="p"
-          animationNum={3}
-          timelineRef={timelineRef}
-          className="subheading text-2xl text-neutral-500 max-w-3xl mx-auto px-1 font-medium"
-        >
-          Where Dawn Meets the Sea
-        </TimelineAnimation>
+        <BlurFade delay={0.4} inView>
+          <p className="hsubheading text-2xl text-neutral-500 max-w-3xl mx-auto px-2 font-medium">
+            Where Dawn Meets the Sea
+          </p>
+        </BlurFade>
 
         <TimelineAnimation
           as="p"
           animationNum={4}
           timelineRef={timelineRef}
-          className="para "
+          className="hpara"
         >
           A secluded, eco-tented escape on Private Beach, Gujarat.
         </TimelineAnimation>

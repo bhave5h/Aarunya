@@ -209,7 +209,6 @@ function BookingContent() {
         {/* Header Section */}
         <div className="max-w-4xl mx-auto text-center space-y-3 mb-8">
           <div className="bg-white/60 backdrop-blur-md w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-sm border border-neutral-200">
-            <Sparkles className="w-4 h-4 text-amber-600" />
             <span className="text-xs md:text-sm font-semibold tracking-tight text-slate-800">
               Resort Booking Portal
             </span>

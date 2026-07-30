@@ -1,6 +1,7 @@
 "use client";
 
 import { FaqAccordion } from "@/components/ui/faq-chat-accordion";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 const resortFaqData = [
   {
@@ -50,8 +51,12 @@ export default function FAQ() {
           </span>
         </div>
 
-        <h2 className="heading mx-auto opacity-100">FAQ</h2>
-        <p className="subheading mx-auto"></p>
+        <BlurFade delay={0.15} inView>
+          <h2 className="heading mx-auto opacity-100">FAQ</h2>
+        </BlurFade>
+        <BlurFade delay={0.3} inView>
+          <p className="subheading mx-auto">Frequently Asked Questions</p>
+        </BlurFade>
         <p className="para mx-auto max-w-xl">
           Details about tent check-in, dining options, activities, and staying at Aarunya.
         </p>

@@ -14,6 +14,7 @@ import {
   Calendar,
 } from "lucide-react";
 import Window from "@/components/ui/Window";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -53,8 +54,12 @@ export default function Contact() {
           </span>
         </div>
 
-        <h2 className="heading mx-auto">Contact</h2>
-        <p className="subheading mx-auto">Find Your Way to Aarunya</p>
+        <BlurFade delay={0.15} inView>
+          <h2 className="heading mx-auto">Contact</h2>
+        </BlurFade>
+        <BlurFade delay={0.3} inView>
+          <p className="subheading mx-auto">Find Your Way to Aarunya</p>
+        </BlurFade>
         <p className="para mx-auto max-w-2xl">
           Reserve your eco-tent along the shore, ask about customized
           itineraries, or connect directly with our coastal hosts.
