@@ -62,7 +62,7 @@ export default function Contact() {
       </div>
 
       {/* Main Container styled with Hero/Experience Glassmorphic Card Aesthetics */}
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

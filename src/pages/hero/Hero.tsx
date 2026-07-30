@@ -48,7 +48,7 @@ export const Hero = () => {
               "https://i.pinimg.com/1200x/5d/e9/84/5de984dfc28f55d8df14bf57e9466f87.jpg";
           }}
           alt="Hero Background"
-          className="w-full h-full object-cover bg-white/30  backdrop-blur-md to-black"
+          className="w-full h-full object-cover"
         />
         {/* Soft glassmorphic overlay for crisp text legibility */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/10 shadow-inside " />

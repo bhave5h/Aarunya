@@ -96,7 +96,7 @@ export const Reviews = () => {
   }, []);
 
   return (
-    <section id="reviews" className="w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+    <section id="reviews" className="max-w-3xl mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Header Section */}
         <div className="max-w-4xl mx-auto text-center space-y-3 opacity-99">
@@ -118,7 +118,7 @@ export const Reviews = () => {
         </div>
 
         {/* Masonry Grid */}
-        <div className="pt-4">
+        <div className="pt-4 max-w-5xl">
           <MasonryGrid columns={columns} gap={4}>
             {testimonials.map((card, index) => (
               <TestimonialCard key={index} {...card} />
