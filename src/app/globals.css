@@ -36,14 +36,14 @@ body {
   font-family: var(--font-libre), serif;
   font-weight: 100;
   font-style: normal;
-  @apply text-4xl font-bold text-neutral-950 tracking-tight text-shadow-lg;
+  @apply text-4xl font-bold text-neutral-950 tracking-tight;
 }
 
 .subheading {
   font-family: var(--font-libre), serif;
   font-style: italic;
   font-weight: 400;
-  @apply text-xl sm:text-2xl text-neutral-800 tracking-wide text-shadow-md; 
+  @apply text-xl sm:text-2xl text-neutral-800 tracking-wide; 
 }
 
 .hheading {
@@ -57,13 +57,13 @@ body {
   font-family: var(--font-libre), serif;
   font-style: normal;
   font-weight: 400;
-  @apply text-xl sm:text-2xl text-black/85 tracking-wide text-shadow-lg; 
+  @apply text-xl sm:text-2xl text-black/85 tracking-wide; 
 }
 
 .hpara {
   font-family: var(--font-quicksand), sans-serif;
   font-weight: 400;
-  @apply text-xl text-black/90 font-medium mx-auto leading-relaxed text-shadow-lg;
+  @apply text-xl text-black/90 font-medium mx-auto leading-relaxed;
 }
 
 
