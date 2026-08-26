@@ -47,7 +47,7 @@ export default function Contact() {
       className="relative w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden select-none"
     >
       {/* Header Section matching Hero/Experience styling */}
-      <div className="max-w-4xl mx-auto text-center space-y-3 mb-12 md:mb-16">
+      <div className="max-w-4xl mx-auto text-center space-y-1 mb-5">
         <div className="bg-white/40 backdrop-blur-md w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-sm border border-neutral-200">
           <span className="text-xs md:text-sm font-semibold tracking-tight text-slate-800">
             Contact & Reservations
@@ -60,13 +60,14 @@ export default function Contact() {
         <BlurFade delay={0.3} inView>
           <p className="subheading mx-auto">Find Your Way to Aarunya</p>
         </BlurFade>
-        <p className="para mx-auto max-w-2xl">
-          Reserve your eco-tent along the shore, ask about customized
-          itineraries, or connect directly with our coastal hosts.
-        </p>
+        <BlurFade delay={0.4} inView>
+          <p className="para mx-auto max-w-[500px]">
+            Reserve your eco-tent along the shore, ask about customized
+            itineraries, or connect directly with our coastal hosts.
+          </p>
+        </BlurFade>
       </div>
 
-      {/* Main Container styled with Hero/Experience Glassmorphic Card Aesthetics */}
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -110,8 +111,10 @@ export default function Contact() {
                 <div className="text-xs font-bold text-neutral-400 uppercase tracking-wider">
                   WhatsApp Chat
                 </div>
-                <div className="text-sm font-semibold text-neutral-900 truncate
-                ">
+                <div
+                  className="text-sm font-semibold text-neutral-900 truncate
+                "
+                >
                   Instant Inquiry
                 </div>
               </div>

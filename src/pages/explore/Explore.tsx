@@ -14,7 +14,7 @@ import {
   MapPin,
   Coffee,
   Sun,
-  Maximize2
+  Maximize2,
 } from "lucide-react";
 
 interface TentInfo {
@@ -53,17 +53,17 @@ const TENTS_DATA: TentInfo[] = [
     images: [
       {
         url: "https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=80",
-        caption: "Luxury Canopy Bedroom"
+        caption: "Luxury Canopy Bedroom",
       },
       {
         url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80",
-        caption: "Ensuite Bamboo Bathroom"
+        caption: "Ensuite Bamboo Bathroom",
       },
       {
         url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
-        caption: "Private Deck & Ocean View"
-      }
-    ]
+        caption: "Private Deck & Ocean View",
+      },
+    ],
   },
   {
     id: 2,
@@ -86,17 +86,17 @@ const TENTS_DATA: TentInfo[] = [
     images: [
       {
         url: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80",
-        caption: "Cozy Jungle Interior"
+        caption: "Cozy Jungle Interior",
       },
       {
         url: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80",
-        caption: "Modern Open-Air Bath"
+        caption: "Modern Open-Air Bath",
       },
       {
         url: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-        caption: "Verandah Lounge Area"
-      }
-    ]
+        caption: "Verandah Lounge Area",
+      },
+    ],
   },
   {
     id: 3,
@@ -119,17 +119,17 @@ const TENTS_DATA: TentInfo[] = [
     images: [
       {
         url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-        caption: "Garden View Suite"
+        caption: "Garden View Suite",
       },
       {
         url: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80",
-        caption: "Luxury Bedding & Decor"
+        caption: "Luxury Bedding & Decor",
       },
       {
         url: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80",
-        caption: "Outdoor Relaxation Spot"
-      }
-    ]
+        caption: "Outdoor Relaxation Spot",
+      },
+    ],
   },
   {
     id: 4,
@@ -152,17 +152,17 @@ const TENTS_DATA: TentInfo[] = [
     images: [
       {
         url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80",
-        caption: "Sunset View Interior"
+        caption: "Sunset View Interior",
       },
       {
         url: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
-        caption: "Spacious En-Suite Bathroom"
+        caption: "Spacious En-Suite Bathroom",
       },
       {
         url: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=800&q=80",
-        caption: "Private Sunset Balcony"
-      }
-    ]
+        caption: "Private Sunset Balcony",
+      },
+    ],
   },
   {
     id: 5,
@@ -186,18 +186,18 @@ const TENTS_DATA: TentInfo[] = [
     images: [
       {
         url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
-        caption: "Beachfront Suite Lounge"
+        caption: "Beachfront Suite Lounge",
       },
       {
         url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80",
-        caption: "Private Bathroom"
+        caption: "Private Bathroom",
       },
       {
         url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-        caption: "Direct Beach Steps"
-      }
-    ]
-  }
+        caption: "Direct Beach Steps",
+      },
+    ],
+  },
 ];
 
 import { useRouter } from "next/navigation";
@@ -208,12 +208,16 @@ export const Explore = () => {
   const [selectedTentId, setSelectedTentId] = useState<number>(1);
   const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
 
-  const activeTent = TENTS_DATA.find((t) => t.id === selectedTentId) || TENTS_DATA[0];
+  const activeTent =
+    TENTS_DATA.find((t) => t.id === selectedTentId) || TENTS_DATA[0];
 
   return (
-    <section id="explore" className="relative w-full max-w-6xl mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section
+      id="explore"
+      className="relative w-full max-w-6xl mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
       {/* Header Section matching Hero.tsx styling */}
-      <div className="max-w-4xl mx-auto text-center space-y-3 mb-10 md:mb-14">
+      <div className="max-w-4xl mx-auto text-center space-y-1 mb-5">
         {/* Pill Tag */}
         <div className="bg-white/40 backdrop-blur-md w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-sm border border-neutral-200">
           <span className="text-xs md:text-sm font-semibold tracking-tight text-slate-800">
@@ -223,25 +227,22 @@ export const Explore = () => {
 
         {/* Heading & Subheading */}
         <BlurFade delay={0.15} inView>
-          <h1 className="heading mx-auto">
-            Explore
-          </h1>
+          <h1 className="heading mx-auto">Explore</h1>
         </BlurFade>
 
         <BlurFade delay={0.3} inView>
-          <p className="subheading mx-auto">
-            One Beach, All Yours
-          </p>
+          <p className="subheading mx-auto">One Beach, All Yours</p>
         </BlurFade>
 
-        <p className="para mx-auto">
-          Fifteen eco-friendly tents tucked between the hills and the sea
-        </p>
+        <BlurFade delay={0.45} inView>
+          <p className="para mx-auto">
+            Fifteen eco-friendly tents tucked between the hills and the sea
+          </p>
+        </BlurFade>
       </div>
 
       {/* Main Large Centered Interactive Showcase Container */}
       <div className="max-w-5xl mx-auto relative">
-
         <div className="relative w-full rounded-4xl overflow-hidden shadow-2xl border border-white/60 bg-neutral-900 group">
           {/* Central Large Aerial Landscape Map Image */}
           <div className="relative w-full aspect-[16/9] min-h-[600px]">
@@ -253,7 +254,6 @@ export const Explore = () => {
               sizes="100vw"
               className="object-center scale-100 transition-transform duration-1000 ease-out"
             />
-
           </div>
 
           {/* Floating Room Details Card (Appearing ON and INSIDE IT on the Left Side) */}
@@ -346,7 +346,10 @@ export const Explore = () => {
                   {/* Selected Gallery Image */}
                   <div className="relative h-40 md:h-44 w-full rounded-2xl overflow-hidden shadow-inner bg-neutral-100 group/img">
                     <Image
-                      src={activeTent.images[activeImageIndex]?.url || activeTent.images[0].url}
+                      src={
+                        activeTent.images[activeImageIndex]?.url ||
+                        activeTent.images[0].url
+                      }
                       alt={activeTent.name}
                       fill
                       unoptimized
@@ -384,7 +387,9 @@ export const Explore = () => {
 
                 {/* Hero-style Primary Button */}
                 <button
-                  onClick={() => router.push(`/booking?tentId=${activeTent.id}`)}
+                  onClick={() =>
+                    router.push(`/booking?tentId=${activeTent.id}`)
+                  }
                   className="w-content py-3 px-5 rounded-4xl bg-neutral-900 hover:bg-black active:scale-[0.98] text-white font-bold text-sm shadow-[inset_2px_2px_5px_0px_rgba(0,0,0,0.5),inset_-2px_-2px_6px_1px_rgba(80,78,78,0.5)] flex items-center justify-center gap-2 group transition-all cursor-pointer mt-2"
                 >
                   <span>Reserve Tent {activeTent.id}</span>

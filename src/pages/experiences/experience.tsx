@@ -145,9 +145,9 @@ export const Experience = () => {
       className="relative w-full h-screen py-16 md:py-24 px-4 overflow-hidden select-none"
     >
       {/* Header Section */}
-      <div className="max-w-3xl mx-auto text-center space-y-3 mb-12 md:mb-16 pointer-events-none">
+      <div className="max-w-3xl mx-auto text-center space-y-1 mt-20 pointer-events-none">
         <div className="bg-white/40 backdrop-blur-md w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-sm border border-neutral-200">
-          <span className="text-xs md:text-sm font-semibold tracking-tight text-slate-800">
+          <span className="text-xs md:text-sm font-semibold tracking-tight text-slate-800 ">
             About
           </span>
         </div>
@@ -158,15 +158,17 @@ export const Experience = () => {
         <BlurFade delay={0.3} inView>
           <p className="subheading">Live Slower, Feel Everything</p>
         </BlurFade>
-        <p className="para">
+        <BlurFade delay={0.45} inView>
+        <p className="para ">
           Bonfire nights, folk dances, sunrise kayaking and dolphin
           <br className="hidden sm:inline" /> spotting days shaped by the tide,
           not the clock.
         </p>
+        </BlurFade>
       </div>
 
       {/* Draggable Frames Container */}
-      <div className="max-w-5xl mx-auto relative min-h-[210px] flex items-center justify-center">
+      <div className="max-w-5xl mx-auto relative min-h-[210px] mt-10 flex items-center justify-center">
         <div className="absolute inset-0 flex items-center justify-center">
           {frames.map((frame, index) => (
             <motion.div

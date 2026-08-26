@@ -9,38 +9,50 @@ const testimonials = [
   {
     profileImage: "https://randomuser.me/api/portraits/women/44.jpg",
     name: "Aanya & Rohan",
-    feedback: "Waking up to the sea breeze right from our canopy tent was unforgettable.",
-    mainImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&h=1200&q=80",
+    feedback:
+      "Waking up to the sea breeze right from our canopy tent was unforgettable.",
+    mainImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&h=1200&q=80",
   },
   {
     profileImage: "https://randomuser.me/api/portraits/men/32.jpg",
     name: "Vikram Malhotra",
-    feedback: "The sunset kayaking and starlit bonfire dinners were pure magic.",
-    mainImage: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&h=1000&q=80",
+    feedback:
+      "The sunset kayaking and starlit bonfire dinners were pure magic.",
+    mainImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&h=1000&q=80",
   },
   {
     profileImage: "https://randomuser.me/api/portraits/women/68.jpg",
     name: "Priya Sharma",
-    feedback: "Eco-friendly luxury done right. The teak bathrooms and open skies are divine.",
-    mainImage: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&h=1100&q=80",
+    feedback:
+      "Eco-friendly luxury done right. The teak bathrooms and open skies are divine.",
+    mainImage:
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&h=1100&q=80",
   },
   {
     profileImage: "https://randomuser.me/api/portraits/men/56.jpg",
     name: "Devendra Patel",
-    feedback: "A tranquil private beach retreat in Gujarat. We will definitely return!",
-    mainImage: "https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?auto=format&fit=crop&w=800&h=1000&q=80",
+    feedback:
+      "A tranquil private beach retreat in Gujarat. We will definitely return!",
+    mainImage:
+      "https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?auto=format&fit=crop&w=800&h=1000&q=80",
   },
   {
     profileImage: "https://randomuser.me/api/portraits/women/88.jpg",
     name: "Sneha & Kabir",
-    feedback: "Listening to breaking waves from our sun deck made our weekend paradise.",
-    mainImage: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&h=1200&q=80",
+    feedback:
+      "Listening to breaking waves from our sun deck made our weekend paradise.",
+    mainImage:
+      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&h=1200&q=80",
   },
   {
     profileImage: "https://randomuser.me/api/portraits/men/78.jpg",
     name: "Arjun Verma",
-    feedback: "Handcrafted interiors, stellar hospitality, and peaceful ocean shores.",
-    mainImage: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&h=1000&q=80",
+    feedback:
+      "Handcrafted interiors, stellar hospitality, and peaceful ocean shores.",
+    mainImage:
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&h=1000&q=80",
   },
 ];
 
@@ -57,7 +69,8 @@ const TestimonialCard = ({
       alt={name}
       className="w-full h-auto object-cover"
       onError={(e) => {
-        e.currentTarget.src = "https://placehold.co/800x600/1a1a1a/ffffff?text=Resort+View";
+        e.currentTarget.src =
+          "https://placehold.co/800x600/1a1a1a/ffffff?text=Resort+View";
       }}
     />
     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
@@ -97,10 +110,13 @@ export const Reviews = () => {
   }, []);
 
   return (
-    <section id="reviews" className="max-w-3xl mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+    <section
+      id="reviews"
+      className="max-w-3xl mx-auto py-16 px-4"
+    >
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Header Section */}
-        <div className="max-w-4xl mx-auto text-center space-y-3 opacity-99">
+        <div className="max-w-4xl mx-auto text-center space-y-1 ">
           <div className="w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-sm border border-neutral-200">
             <span className="text-xs md:text-sm font-semibold tracking-tight text-slate-800">
               Feedbacks
@@ -116,9 +132,12 @@ export const Reviews = () => {
             <p className="subheading mx-auto">Tales From the Tide</p>
           </BlurFade>
 
-          <p className="para mx-auto max-w-2xl">
-            Real stories from travelers who found their own quiet corner of paradise near Valsad's shores.
-          </p>
+          <BlurFade delay={0.4} inView>
+            <p className="para mx-auto max-w-[500px]">
+              Real stories from travelers who found their own quiet corner of
+              paradise near Valsad's shores.
+            </p>
+          </BlurFade>
         </div>
 
         {/* Masonry Grid */}

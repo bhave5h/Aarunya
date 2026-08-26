@@ -1,127 +1,137 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState, useRef, useEffect } from "react"
-import { ArrowUpRight } from "lucide-react"
-import { BlurFade } from "@/components/ui/blur-fade"
+import { useState, useRef, useEffect } from "react";
+import { ArrowUpRight } from "lucide-react";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 interface Amenity {
-  title: string
-  description: string
-  tag: string
-  link: string
-  image: string
+  title: string;
+  description: string;
+  tag: string;
+  link: string;
+  image: string;
 }
 
 const amenities: Amenity[] = [
   {
     title: "Private Oceanfront Deck",
-    description: "Direct beach access with panoramic sea views & teak sun loungers.",
+    description:
+      "Direct beach access with panoramic sea views & teak sun loungers.",
     tag: "Beachfront",
     link: "#explore",
-    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop",
   },
   {
     title: "En-Suite Teak Bathroom",
     description: "Open-air rain showers with organic botanical toiletries.",
     tag: "Luxury",
     link: "#explore",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop",
   },
   {
     title: "Coastal Dining & Cafe",
-    description: "Fresh sea-catch dining, coconut blends, and artisanal breakfasts.",
+    description:
+      "Fresh sea-catch dining, coconut blends, and artisanal breakfasts.",
     tag: "Dining",
     link: "#contact",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
   },
   {
     title: "Sunset Lounge & Bonfire",
-    description: "Evening acoustic rhythms, stargazing beanbags, and fireside warmth.",
+    description:
+      "Evening acoustic rhythms, stargazing beanbags, and fireside warmth.",
     tag: "Experience",
     link: "#experience",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop",
   },
-]
+];
 
 export function ProjectShowcase() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [smoothPosition, setSmoothPosition] = useState({ x: 0, y: 0 })
-  const [isVisible, setIsVisible] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const animationRef = useRef<number | null>(null)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [smoothPosition, setSmoothPosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<number | null>(null);
 
   useEffect(() => {
     const lerp = (start: number, end: number, factor: number) => {
-      return start + (end - start) * factor
-    }
+      return start + (end - start) * factor;
+    };
 
     const animate = () => {
       setSmoothPosition((prev) => ({
         x: lerp(prev.x, mousePosition.x, 0.15),
         y: lerp(prev.y, mousePosition.y, 0.15),
-      }))
-      animationRef.current = requestAnimationFrame(animate)
-    }
+      }));
+      animationRef.current = requestAnimationFrame(animate);
+    };
 
-    animationRef.current = requestAnimationFrame(animate)
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
       if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current)
+        cancelAnimationFrame(animationRef.current);
       }
-    }
-  }, [mousePosition])
+    };
+  }, [mousePosition]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect()
+      const rect = containerRef.current.getBoundingClientRect();
       setMousePosition({
         x: e.clientX - rect.left,
         y: e.clientY - rect.top,
-      })
+      });
     }
-  }
+  };
 
   const handleMouseEnter = (index: number) => {
-    setHoveredIndex(index)
-    setIsVisible(true)
-  }
+    setHoveredIndex(index);
+    setIsVisible(true);
+  };
 
   const handleMouseLeave = () => {
-    setHoveredIndex(null)
-    setIsVisible(false)
-  }
+    setHoveredIndex(null);
+    setIsVisible(false);
+  };
 
   return (
-    <section id="amenities" ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full max-w-xl mx-auto py-12 md:py-20">
+    <section
+      id="amenities"
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className="relative w-full max-w-xl mx-auto py-12 md:py-20"
+    >
+      <div className="mx-auto flex flex-col items-center justify-center space-y-1 pb-8">
+        <div className="bg-white/40 backdrop-blur-md w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-sm border border-neutral-200">
+          <span className="text-xs md:text-sm font-semibold tracking-tight text-slate-800">
+            Resort Comforts
+          </span>
+        </div>
 
-<div className="mx-auto flex flex-col items-center justify-center space-y-3 pb-8">
-  <div className="bg-white/40 backdrop-blur-md w-fit mx-auto px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 shadow-sm border border-neutral-200">
-    <span className="text-xs md:text-sm font-semibold tracking-tight text-slate-800">
-      Resort Comforts
-    </span>
-  </div>
+        <BlurFade delay={0.15} inView>
+          <h1 className="heading mx-auto">Amenities</h1>
+        </BlurFade>
 
-   <BlurFade delay={0.15} inView>
-     <h1 className="heading mx-auto">
-       Amenities
-     </h1>
-   </BlurFade>
+        <BlurFade delay={0.3} inView>
+          <p className="subheading mx-auto">Tents Fit for a Maharaja</p>
+        </BlurFade>
 
-   <BlurFade delay={0.3} inView>
-     <p className="subheading mx-auto">
-       Tents Fit for a Maharaja
-     </p>
-   </BlurFade>
-
-        <p className="para mx-auto max-w-xl text-center">
-          Handcrafted Rajasthani interiors, sea-facing verandas and <br className="hidden sm:inline" /> private en-suite baths, only fifteen keys along the shore.
-        </p>
-    
-</div>
+        <BlurFade delay={0.45} inView>
+          <p className="para mx-auto max-w-xl text-center">
+            Handcrafted Rajasthani interiors, sea-facing verandas and{" "}
+            <br className="hidden sm:inline" /> private en-suite baths, only
+            fifteen keys along the shore.
+          </p>
+        </BlurFade>
+      </div>
 
       <div
         className="pointer-events-none fixed z-50 overflow-hidden rounded-xl shadow-2xl"
@@ -131,7 +141,8 @@ export function ProjectShowcase() {
           transform: `translate3d(${smoothPosition.x + 20}px, ${smoothPosition.y - 100}px, 0)`,
           opacity: isVisible ? 1 : 0,
           scale: isVisible ? 1 : 0.8,
-          transition: "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), scale 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          transition:
+            "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), scale 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >
         <div className="relative w-[280px] h-[180px] bg-neutral-100 rounded-xl overflow-hidden shadow-lg border border-neutral-200">
@@ -235,5 +246,5 @@ export function ProjectShowcase() {
         <div className="border-t border-border" />
       </div>
     </section>
-  )
+  );
 }

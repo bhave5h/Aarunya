@@ -35,16 +35,21 @@ body {
 .heading {
   font-family: var(--font-libre), serif;
   font-weight: 100;
-  font-style: normal;
-  @apply text-4xl font-bold text-neutral-950 tracking-tight;
+  @apply text-[40px] font-bold text-black/85 tracking-tight mt-5;
 }
 
 .subheading {
   font-family: var(--font-libre), serif;
-  font-style: italic;
-  font-weight: 400;
-  @apply text-xl sm:text-2xl text-neutral-800 tracking-wide; 
+  font-weight: 100;
+  @apply text-[26px] text-black/80 tracking-wide; 
 }
+
+.para {
+  font-family: var(--font-quicksand), sans-serif;
+  @apply text-[16px] text-black/70 font-semibold mx-auto leading-relaxed;
+}
+
+
 
 .hheading {
   font-family: var(--font-libre), serif;
@@ -66,11 +71,6 @@ body {
   @apply text-xl text-black/90 font-medium mx-auto leading-relaxed;
 }
 
-
-.para {
-  font-family: var(--font-quicksand), sans-serif;
-  @apply text-neutral-600 text-lg sm:text-xl font-semibold mx-auto leading-relaxed;
-}
 
 .load {
   font-family: var(--font-quicksand), sans-serif;
